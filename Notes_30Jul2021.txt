@@ -93,3 +93,86 @@ git init
 
 ls -al			in linux to see all files as a long list
 
+
+
+
+in your computer
+	git init
+	git clone https://github.com/jagasia/t3.git
+	
+for pushing
+	git add .					. means all files in current location
+	git commit -m "first commit"
+
+
+
+i have added a text file into the repo using git push
+i am going to add 2 collaborators now to this repo now
+
+
+
+before you push any content into my repo,
+	you must have cloned/pulled all changes already there in my repo.
+	Otherwise, it will not allow you to push content to my repo
+	It will tell you that "remote contains works that you do not have locally. Do pull before you push"
+
+
+
+1) in angular project
+	node_modules		folder	contains around 50k files
+
+	when i push an angular project to git
+	i dont want to include this folder 
+		gitignore
+
+2) there are 2 branches in my local repo
+	main
+	new_branch
+
+	How to merge 2 branches
+
+3) 	-m
+	-M
+	-u
+
+
+git log
+
+----------------------------------------------------------------------------------------
+CSS
+	Bootstrap 3, 4, 5
+
+Somebody has done lot of styles using CSS, JS, JQuery
+
+
+Bootstrap typhography
+	basic appearance of html elements are influenced by bootstrap
+
+https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.css
+https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js
+
+Bootstrap
+	provides scaffolding
+	basic structure of the website can be created easily 
+
+	grid structure
+		12 columns
+	is mobile first
+	RWD
+		Responsive Web Design
+
+
+
+Bootstrap Topics
+-----------------
+Grid basic		12 columns
+Typography
+Buttons
+Form input elements
+Table
+Jumbotron
+Nav			menubar			Navbar
+Accordion
+Alert
+Carousel
+Accordion
