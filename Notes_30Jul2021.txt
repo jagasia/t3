@@ -171,7 +171,7 @@ Buttons
 Form input elements
 Table
 Jumbotron
-Nav			menubar			Navbar
+Nav			Navbar
 Accordion
 Alert
 Carousel
