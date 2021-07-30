@@ -1,0 +1,95 @@
+Git
+	Central repository for sharing our projects or artifacts 
+	Version support	
+		track changes
+			add
+			modified
+			delet
+	synchronize
+		local repository
+		to 
+		remote repository
+
+Cognizant
+	1) associates are not supposed use their cognizant email id in git hub
+
+	Git Hub	is only for learning the module
+
+	projects,
+		we use GitLab		using cognizant id but password will be provided during project phase
+		tekstac portal	
+			Project link
+
+	personal email id for signing up to Git Hub
+
+Start with git
+Lab setup:
+---------
+	windows command prompt
+Handson 1:
+	installing git
+	git version
+	
+
+
+command to find the git version in your computer
+	git --version
+
+
+
+1) create a repository
+2) push a project folder/ files into the repository
+
+3)
+	i) clone my repository to your local folder
+		copying my contents from remote repository to your local repository
+
+a folder can be considered as local repository if it contains .git file
+
+how this can be very useful?
+versioning
+	multiple users are pushing contents into same repository
+
+AWS
+	i login to aws portal and create an application, push my project from my computer to aws cluster
+		deployment
+
+every time i do some changes in my project,
+	i have to login to aws and deploy it 
+
+CI/CD
+	Continuous Integration
+		AWS code pipeline			GIT 
+		integrate git hub repository to aws container
+		using git credentials	
+		you can push changes to git repo 
+		git will notify aws
+
+
+or create a new repository on the command line
+echo "# t3" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jagasia/t3.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/jagasia/t3.git
+git branch -M main
+git push -u origin main
+
+
+
+
+git init
+	this will make your current folder/directory as a local repository
+	create a file .git in your current folder		invisible
+	some times, you have issued wrong commands, you may want to reinit this repo
+		del .git		(windows)
+		rm .git			(linux)
+
+
+ls -al			in linux to see all files as a long list
+
