@@ -1,0 +1,247 @@
+when i push angular project to remote repository, i do not want to push certain folders
+
+node_modules		folder contains around 52k files
+			i dont want to upload it
+
+
+	the solution is to create a file called .gitignore and mention the list of files/folders to ignore while pushing
+
+	
+
+	-m	should be used only if we have used "add" before this command
+	-am	can be used without "add" used before. 	
+		understands all files in current location
+
+Bootstrap
+----------
+Grid
+	treats a page as 12 column layout
+
+Angular
+	to use bootstrap
+		simplest way is to copy the cdn in index.html <head> portion
+	otherwise
+		install bootstrap for a project or globally also
+
+1) scaffolding		basic structure of the website
+			*ngIf
+			[ngClass]
+		
+
+		.........	blank, show error message
+		<span *ngIf="true">Passwords does not match</span>
+
+
+in bootstrap there are some important classes
+
+
+	table	table-striped table-bordered table-hover
+	<thead class="">
+
+Button
+	success			btn-success
+	warning
+	primary
+	danger
+	info
+
+
+has-error
+
+alert-danger
+
+CRUD 
+form
+	user inputs
+
+table in the bottom
+..........select
+------------------------------------------------------------------------------
+JQuery?
+	Javascript Query
+		IMO is an application of Javascript
+	js code can be used in jquery also
+
+	syntax			
+		selectors	
+		compare 		
+
+			value		val()
+			innerText	text()
+			innerHTML	html
+	AJAX
+		javascript
+		jquery
+
+
+use jquery cdn
+	directly refer to jquery cdn
+	or create a file locally and paste cdn content and use locally
+
+There are lot of textboxes
+when cursor goes into a textbox, that textbox should be highlighted (background color should be yellow)
+
+
+event selector		where is the event occurring		
+what is the event	click
+what is the event handler	in response to the event what should happen?
+
+every html element has style attribute
+	style="background-color"
+
+
+JQuery:
+	selectors
+		element
+		id
+		class
+		pseudo
+
+
+
+
+	bootstrap.css
+	bootstrap.js
+	jquery.js
+
+
+in jquery, mostly, a programmer stays only inside his <script> tag
+he can work independently without disturbing the html code
+
+<input type=button onclick="fn()">
+
+<input type=button id="btn">
+
+$("#btn").click(function(){
+});
+
+jag.js
+
+he refers using
+<script src="jag.js">
+
+even in js also
+	we can stay away from html file and do binding event
+	document.getElementById("btn").addEventListener("click",fn1());		//js
+
+	$("#btn").click();
+
+if someone alreay has done common programming tasks and named it as jquery.js
+
+---------------------------------------------------------------------------------------------
+Spring REST
+------------
+
+STS	spring tool suite			eclipse is fine		Oxygen or v4
+
+all of you Spring boot MVC
+
+Spring vs Spring boot
+-----------------------
+	.jar 				main method		core java project 
+	embedded tomcat				
+	starter dependencies			dependencies are grouped as starter
+	convention over configuration
+
+when you work in spring core
+	you do lot of configuration
+		componenScan
+		base directory
+		xml file
+		
+	but in spring boot
+		we follow convention
+			under base package if we create controllers, we dont need to specify the location
+			componentScan
+
+spring boot 
+
+REST can be done without boot also
+
+I learnt RESTful webservices first using "jersey" framework
+
+
+the idea behind REST is to allow us to share our java code using URL
+
+2001
+	allowing client apps to access our java code using URL using "WEB SERVICES"
+	SOAP
+
+SOAP shares the entire web service using 1 url
+
+when micro services architecture has come, we need technique to share one method using 1 url
+
+REST
+	REpresentational State Transfer		is not a protocol 
+		architectural style
+
+SOAP is a protocol
+	is rigid			text/xml		format
+
+REST
+	support		multiple formats
+		text/xml
+		text/html
+		text/plain
+		text/json
+
+	JSON become more preferred format of data interchange
+
+a java object can be sent as json
+a json string can be converted into java object
+
+	jersey		we were doing this above conversion manually and then later using gson
+
+Spring boot
+	@GetMapping("/employee")
+	public List<Employee> getAllEmployee()
+	{
+		return x;
+	}
+
+
+they will not combine one form
+	<form>
+		first name
+		last name
+		Photo:
+	</form>
+
+
+
+bootstrap cards
+
+
+http://localhost:8080/employee
+	GET http://localhost:8080/employee			all employee as a json array
+	GET http://localhost:8080/employee/1			one employee whose id is 1
+	POST http://localhost:8080/employee			adding an employee
+	PUT http://localhost:8080/employee			modifying an employee
+	DELETE http://localhost:8080/employee			deleting an employee
+
+these mappings you are not using in MVC project
+	<form method="GET"
+	<form method="POST"
+		
+	PUT/DELETE/PATCH		not used in MVC project
+
+	we created a REST api 
+	we accessed the rest api from a MVC project using feign client
+
+
+GET https://jsonplaceholder.typicode.com/todos		all
+GET https://jsonplaceholder.typicode.com/todos/11
+
+POST
+PUT
+DELETE
+
+you cannot do in browser. So we need to use postman
+
+
+Accordion			toggle of menus that can collapse or expand
+Carousel			pictures that will slide towards left
+
+
+
+https://www.tutorialspoint.com/jqueryui/jqueryui_accordion.htm
