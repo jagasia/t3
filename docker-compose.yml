@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+ localhost:
+  image: "mysql"
+  command: --default-authentication-plugin=mysql_native_password
+  restart: always
+  environment:
+   MYSQL_ROOT_PASSWORD: 'rootuser'
+  ports:
+   - "3306:3306"
+  expose:
+   - "3306"
+  environment:
+   MYSQL_DATABASE: bank
+   MYSQL_ROOT_USER: root
+   MYSQL_ROOT_PASSWORD: rootuser
+
+ adminer:
+   image: jagindia/jf1mysql
+   restart: always
+   ports:
+    - "9000:8080"
+   depends_on:
+    - localhost
+   command: sh -c './wait-for localhost:3306 -- npm start'
+   links:
+    - localhost:localhost
