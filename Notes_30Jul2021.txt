@@ -123,7 +123,7 @@ before you push any content into my repo,
 
 	when i push an angular project to git
 	i dont want to include this folder 
-		gitignore
+		.gitignore
 
 2) there are 2 branches in my local repo
 	main
