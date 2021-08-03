@@ -1,0 +1,333 @@
+AJ batches		Adv Java batch
+	Stage 1, 2, 3
+
+JF batches		Java full stack
+	Stage 1, 2, 3, 4
+
+
+Starter web
+devtools		when i want auto restart		
+
+
+	@RestController
+
+Spring core, aop, jdbc template, hibernate template	will help in JPA repository
+
+AJ batches using 	spring data jdbc
+JF batches using	spring data jpa	
+
+
+
+assuming that all of us know
+	Spring core, aop, jdbc template, hibernate template	
+
+Spring REST using spring boot				start.spring.io
+
+
+Spring BOOT CLI?
+----------------
+	command line interface
+	this is useful for writing and executing groovy scripts
+
+
+
+
+
+something.groovy
+----------------
+@RestController
+class FirstApplication {
+   @RequestMapping("/")
+   String welcome() {
+      "Welcome to Jag india.com"
+   }
+}
+--------------------------------------
+spring run something.groovy
+
+
+
+
+
+to install spring boot CLI
+downloand and extract it to a known location
+
+in environment variables edit "path" variable and append the path of bin like below:
+	D:\Softwares\spring-boot-cli-2.5.0-bin\spring-2.5.0\bin
+
+Spring boot using MAVEN
+-----------------------
+
+
+Eclipse users
+	go to 
+		start.spring.io
+
+Spring Tool Suite
+	File 
+		spring starter project
+
+
+
+these are all IMO are boiler plate code
+
+Employee
+	id
+	firstName
+	lastName
+	address
+
+once all these properties are declared, anyone can create the above boilerplate code
+
+constructor
+constructor with arg
+getters
+setters
+toString
+
+
+is there any technique to generate the boiler plate code?
+	Lambork
+
+you are correct
+	java 9
+
+Sonar Qube
+	code quality
+	i was forced to use java 11
+
+java 8	lambok doesn't work		no errors but i get blank output
+
+
+<bean>
+
+@Component
+@Bean
+
+IOC	container loads beans when we define using either of above 3 methods
+
+<bean>
+@Component
+@Bean
+
+the prerequisite includes above 3
+
+<bean>		this is used in xml based configuration
+
+remaining 2 are annotation based configuration
+@Component	
+@Bean
+
+both of them marks a class as a bean/component
+difference is
+	@Bean annotation can be used on methods only
+	@Component annotaion can be used on class only
+
+if i am creating a class that should be a bean, then i can use @Component
+	Sometimes, pre defined classes that are present in some dependencies (jars) i dont have their source code to modify
+
+@Component			//i can use this annotation here, because, i am writing the source code here
+public class EmployeeDaoImpl
+{
+}
+	
+
+JdbcTemplate
+
+i am not createing this class at all. It is already there
+
+@Component			//not possible
+public class JdbcTemplate
+
+
+solution:
+in config class
+
+@Configuration
+public class MyConfig
+{
+	@Bean
+	public JdbcTemplate getJdbcTemplate(DataSource datasource)
+	{
+	}
+}
+
+
+<bean id="jdbcTemplate" class="......JdbcTemplate">
+	<property id="dataSource" ref="ds"/>
+</bean>
+
+
+
+AJ batches they have spring data jdbc should be the db technique for project
+Design constraints
+
+JF batch 		spring data jpa
+
+
+already to give some idea to the associates 
+fake rest api
+	Json placeholder
+	
+https://jsonplaceholder.typicode.com/posts			all posts
+
+@PathVariable
+@RequestBody
+@RequestParam
+
+
+http://localhost:8080/user/1					1 is sent as pathvariable
+http://localhost:8080/user?id=1					1 is sent as request param
+
+when we use POST and PUT we do not send the info by url		request body
+
+@ResponseBody
+	this is used in MVC projects
+
+@RestController	=	@Controller	+	@ResponseBody
+
+@Controller	is used in MVC projects
+@RestController is used in REST api
+
+there needs some clarity between mvc projects and rest api
+
+MVC projects have VIEW also			html/jsp
+----------------------------
+REST APIs do not have VIEW
+----------------------------
+
+in all batches in cts, we use angular front end		before 1 month "Angular" was not there in JF003 NOW it is included
+
+so our front end is Angular
+	our back end is Spring boot rest api and mysql
+	there will be more than one rest apis all of them are registered in Eureka server as microservice
+
+Feign client
+-------------
+	is used to access REST API from spring mvc project
+
+
+REST API accessed from angular project is simple
+	GET
+	POST
+	PUT
+	DELETE
+		all of them can be done from angular
+
+but from JSP
+	how do you access PUT and DELETE
+
+
+WE CREATED MVC PROJECT
+WE CREATED REST APIs		more than 1 rest api projects		each are microservice
+
+the mvc project should access rest api using feign client
+	feign client transforms the microservice into an interface in java (containing all methods inside) autowire that interface and access them from mvc controller methods
+	now you can call all methods as natural as we do in java		NO URL requests
+
+
+1) creating a hello world rest api
+2) demo in spring data jdbc			jdbc template		write SQL query 
+3) spring data jpa
+4) mvc project accessing rest api using feign client
+
+spring tool suite
+
+i will give demo for eclipse steps
+
+Spring boot is convention over configuration
+
+create a rest controller
+1) convention is to create the controller class either directly inside base package or its sub package
+ 
+	
+
+@SpringBootApplication
+	annotation is a combination of many annotation
+	auto configuration
+	Spring boot configuration
+	
+
+
+across all controller classes, the urls must be unique
+so how to manage?
+	if same url 
+
+	http://localhost:8080/user			POST	=add		PUT	=modify		
+
+i dont need url to specify like			/add		/modify
+
+we can differentiate the urls by having base url in the controller class level
+
+
+
+@Service			is a kind of @Component
+@Repository			is a kind of @Component
+@Component
+
+
+
+
+JPA repository
+	data access technique we are using in JF batches		java full stack batches
+
+Entity	class			this class is mapped to a table in db		ORM
+	@Entity		@Id
+
+Repository		interface		that extends JPA Repository
+
+Service
+	business logics		otherwise, it is just to call repo methods		repo is virtual	invisible
+					DAO 		CRUD			all these are done by repo
+Controller
+
+------------------
+1) create a new project in spring starter
+2) choose dependencies 
+	spring web
+	spring data jpa
+3) create an entity class		Employee
+4) repo is an interface that extends jpa repo
+5) service
+6) controller
+
+
+when we add "spring data jpa" starter dependency, this project expects configuration
+	url
+	driver
+	username
+	password
+
+in spring boot, we do not use xml configuration
+	we use "application.properties"
+		spring.datasource.url=jdbc:oracle:thin:@localhost:1522:xe
+		spring.datasource.username=sys as sysdba
+		spring.datasource.password=password
+
+		spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.OracleDialect
+		spring.jpa.properties.hibernate.id.new_generator_mappings = false
+		spring.jpa.properties.hibernate.format_sql = false
+		spring.jpa.hibernate.ddl-auto=update
+		spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+
+
+
+a property in java is "firstName"
+	it will become 	FIRST_NAME		in the table column
+if we do not want jpa to name using _ then we use 
+	spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+
+id
+first_name
+last_name
+
+but in standard impl:-
+id
+firstName
+lastName
+
+
