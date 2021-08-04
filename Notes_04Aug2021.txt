@@ -1,0 +1,238 @@
+Spring REST
+1) JPA repository			JF
+	Queries				select custom requirement
+	Relationships			1-M		M-1		M-M		eager/lazy loading
+	
+	
+2) Jdbc Template			AJ		2nd stage, jdbctemplate is done in spring (NOT spring boot)
+	RowMapper
+	query returns custom types		Select * 	can be mapped to Entity class
+
+in projects
+	i got an opportunity to support a Full stack project
+	They create multiple rest api and register them in eureka server	microservices
+	Eureka	server	8761
+	Spring rest	8383, 8384, 8384
+
+Full stack batches
+	Spring boot MVC projects 
+		accessing REST API/microservices	using Feign Client
+
+
+Validations
+Exception handlers
+-----------------------------------------------------------------------------------
+Table is already there
+	ddl auto	(CREATE, DROP CREATE, UPDATE, VALIDATE)
+
+create 
+	– Hibernate first drops existing tables, then creates new tables
+update 
+	– the object model created based on the mappings (annotations or XML) is compared with the existing schema, 		and then Hibernate updates the schema according to the diff. It never deletes the existing tables or 		columns even if they are no more required by the application
+
+create-drop 
+	– similar to create, with the addition that Hibernate will drop the database after all operations are 		completed. Typically used for unit testing
+		validate 
+	– Hibernate only validates whether the tables and columns exist, otherwise it throws an exception
+none 
+	– this value effectively turns off the DDL generation
+
+	I chose update.	
+	that means, 
+			if the table is not present, it creates.	
+			if the table already exists, and matches the structure according to the entity class, no 				changes happen
+			if the entity class has properties that are not found in the table, then those columns are 				added to the existing table
+
+			update DO NOT remove records present in the table
+	i could choose CREATE
+			it removes all records present in the table
+			earlier, first time when i run, i chose "create" after that i modified it to update. Later i understood, UPDATE itself will do 
+
+@Entity
+public class Employee
+{
+	@Id
+	private Long id;			//id is a column
+	first....				//firstName became a colummn
+	last....
+	@Transient SimpleDateFormat sdf;	//not persistent		it will not become a column 
+//	@JsonIgnore
+	private byte[] picture;
+		
+}			
+
+	sdf became a column in the table. How will you prevent this?
+
+	Transient
+		i) serialization
+		ii) persistence
+
+	Why @JsonIgnore	annotation is used?
+			
+	Problem:	when a rest controller method returns an object of Employee
+			{ "id":"101", "firstName":"Jag", "lastName":"India", "picture":"LAKSJDFL;KASDFJKSDL;FKJASDL;KFJSD;LKFJSDL;KFJLSKDFJLKSDJFLKSDJFLK;SDJFLKSDJFLK;SDNFKAFNEWOP IGNEWRGOPIE RNGPOIWGNEWOP "}
+	Solution:	USE JSON IGNORE ANNOTATION
+
+	Now, we use json ignore annotation to exclude a field when object is converted into json
+	if this object is received by angular service (http client), then will this field be available there or not?
+
+	JSON.stringify
+	console.log()		automatically calls the toString method of the object thats y we see json string
+
+
+	CREATE			ADD a record to the table
+	READ			select * from table
+	UPDATE			UPDATE a row if found
+	DELETE			delete a row if found
+
+	find Employee by department
+	
+class Employee
+{
+	Department department;
+}
+
+class Department
+{
+	
+}
+	
+
+(m) Employee belongs to (1) Department
+
+1 will join many
+	
+department id		will be added to 	Employee table as foreign key
+
+M - M	relationship
+	then the relationship becomes a table
+
+
+Query
+	"krishna" can be found in firstName or lastName
+
+
+
+employee table
+	id
+	firstName
+	lastName
+	department_id
+
+
+
+
+{"id":1,"name":"ECE"
+
+
+
+    {
+        "id": 101,
+        "firstName": "Mohamed",
+        "lastName": "Raffic",
+        "department": {"id":1,"name":"ECE"}
+    }
+
+
+e-learning portal
+--------------------
+
+if a student logs into the portal
+	the student object has a list of courses
+
+	student object contains List<Course>
+
+
+UPDATE a department that does not make any change
+	
+
+OBJECT of department
+	has List<Employee>
+i just need to see the name of department. Why unnecessarily it loads all employees
+it is not loaded
+	getEmployeeList()	then only it causes the query to load all employees
+
+
+
+PRODUCT
+CUSTOMER
+		relationship is many to many
+the relationship will create a new table	PRODUCT_CUSTOMER	it will contain both primary keys
+
+
+
+
+UNLESS SPEICIFIED IT IS LAZY LOADING ONLY
+	
+constructor based injection
+setter based injection
+
+when i get an entity 
+	find department by id
+		i get an object of department
+
+		that department object does not have List<Employee>	IT IS NOT LOADED	(LAZY)
+		eager mode, loads when department object is created itself
+
+
+in one row of department	how can we fit all employees of that department
+add a column from department (pk) into the many (employee) table
+both sides are many
+
+PROJECT
+	1		There are 5 employees	how to add 5 rows in 1 project row
+EMPLOYEE
+	12		5 PROJECTS	
+
+a new table evolves when m-m relationship is foudn
+
+
+CUSTOMER PRODUCT
+	SALES
+
+---------------------------------------------------------------------------------
+DataSource
+	is a dependency of JdbcTemplate
+
+	@Bean
+	JdbcTemplate getJdbcTemplate(DataSource dataSource) {
+	    JdbcTemplate jdbcTemplate = new JdbcTemplate();
+	    jdbcTemplate.setDataSource(dataSource);
+	    jdbcTemplate.setQueryTimeout(20); //20 seconds
+	    jdbcTemplate.setFetchSize(10);  //fetch 10 rows at a time
+	    return jdbcTemplate;
+	}
+
+	this will allow us to autowire jdbcTEmplate in our dao
+
+
+
+
+CREATE TABLE PRODUCT
+(
+	ID INT PRIMARY KEY,
+    NAME VARCHAR(50) NOT NULL,
+    PRICE DOUBLE
+);
+
+
+
+
+Department
+	List<Employee>
+
+in dao impl
+
+	you find department by id
+		you are actually writing a query
+			SELECT * FROM Department where id=?
+		this will give only the data of department
+			SELECT * FROM Employee WHERE department_id=?
+		List<Employee>	elist;
+			department.setEmployeeList(elist);
+
+
+
+
+
+
