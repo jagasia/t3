@@ -1,0 +1,180 @@
+Eureka server and client
+1) we do not download / install anything
+2) we create an eureka server application		SPRING BOOT APPLICATION only
+
+3) create couple of spring rest api			SPRINT BOOT APP that contains rest controller
+	each of the rest apis are registered as 	eureka client
+
+4) we monitor the microservices that are registered and running in eureka server 	http://localhost:8761
+
+load balancing
+circuit breaker
+
+
+identify the dependencies
+annotations
+configuration
+port numbers
+
+----------------------------------------------------------------------
+1) i was using several instances of eclipse, each in different workspace for each microservice and also eureka server
+2) But we are using different port numbers for server, and each microservice. So we can use a single Eclipse instance
+and run all of them.
+
+we are going to use 1 instance of eclipse now.
+
+1) create a spring boot app
+2) add dependencies 
+	Eureka server
+3) go to application java file (that contains main method)
+	@EnableEurekaServer
+4) go to application.properties
+	server.port=8761
+
+
+---------------
+lets create couple of microservices
+1) employee service
+2) department service
+
+in each of the services (project)
+	i) @EnableEurekaClient
+	ii) application.properties
+			
+@Entity
+@Id
+
+in department service
+
+only the
+Department class will be annotated with jpa
+
+How one controller can call another controller?
+-------------------------------------------------
+in same project, we call methods so no issues
+we do autowiring the services
+all services are there in same project means, you can autowire them in any controller and access them by methods
+
+
+when every controller is in different project		(microservices)
+	how can we call one controller from another controller
+
+ans:
+	feign client
+	
+
+
+Server - Client
+in eureka, server is not a rest api
+it is just a registry where all rest apis are registered and monitored
+
+
+1 controller is done by somebody else
+you are creating another controller, how will you call another controller from your controller?
+
+
+JF003
+	
+MVC project
+	thymeleaf		HTML
+	not using thymeleaf means, you would have used JSP
+in both the cases,
+
+MVC controller, needs to access REST contollers				every REST controller is in different project
+
+our demo now is :
+
+1) REST API
+2) MVC project	is going to access REST API using feign client
+
+Feign will transform the rest api URL into interface (that contains declaration of methods)
+	so mvc controllers are going to call the methods 	(NOT the urls)
+
+correct. The REST API do not have documentation. (SOAP webservices have documentation WSDL)
+we can ask the REST api PROVIDERS to provide swagger support
+we can install swagger
+
+
+yesterday we created a rest api for "Product Controller" so we create a MVC project today that will access that rest api using feign client
+
+1) feign-client-demo			create a spring boot "war" application
+2) dependencies
+	Spring Web
+	DevTools
+	OpenFeign
+
+3) create WEB-INF/jsp FOLDER under src/main/webapp
+	index.jsp under this folder
+4) in application.properties
+	server.port=8081
+	spring.mvc.view.prefix=/WEB-INF/jsp/
+	spring.mvc.view.suffix=.jsp
+5) in Application java class that contains main	(or any configuration class)
+	@EnableFeignClients
+
+6) create a controller
+	/
+
+in MVC project we use @Controller
+	every controller method returning a String is URL	of a view
+		return "hello";		hello is translated into prefix+hello+suffix	WEB-INF/jsp/hello.jsp
+
+	when we use @ResponseBody, we are modifying that behavior of controller method
+		return "hello";	  means, hello will be the value that is returned. in browser we see output as hello
+
+@RestController
+	=	@Controller + @ResponseBody
+
+
+Content Negotiation
+	
+7) Lets create an interface now
+	this interface will reach rest api using the URL and maps methods to required urls
+
+@FeignClient(value = "product-api", url = "http://localhost:8080")
+public interface ProductApi {
+	@PostMapping("/product")
+	public int addProduct(@RequestBody Product product);
+	@GetMapping("/product")
+	public List<Product> getAllProducts();
+	@GetMapping("/product/{id}")
+	public Product findProductById(@PathVariable Long id);
+	@PutMapping("/product")
+	public int modifyProduct(@RequestBody Product product);
+	@DeleteMapping("/product/{id}")
+	public int removeProduct(@PathVariable Long id);
+	
+	@GetMapping("/product/count")
+	public int getProductsCount();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+problem:
+	WEB-INF/jsp/index.jsp		could not be found
+Path with "WEB-INF" or "META-INF": [WEB-INF/jsp/index.jsp]
+
+
+
+
+
+Neither BindingResult nor plain target object for bean name 'product' available as request attribute
+
+root cause:
+	when the page is displayed for the first time, 
+	the form text boxes need not show any values by default
+	so a plain object
+		new Product()
+	must be added to the model 
+
+
