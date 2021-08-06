@@ -1,0 +1,391 @@
+yesterday's topic
+	eureka server application
+	Spring boot rest api (department, employee, product)	these are the microservices
+
+	@EnableEurekaClient
+		this was mentioned in each REST API
+--------------------------------
+1) spring boot 
+	eureka server		8761
+2) 2 projects that are going to register themselves as eureka clients
+	department REST api
+	employee REST api
+3) SOMETHING WE DO NEW TODAY is
+	to make each of these 2 microservices to interact with eachother
+	Feign client
+
+Employees belong to Departments
+
+in employee service,
+	lets have a controller 
+		/employees
+			this will return a list of employee names		String array
+in department service,
+	we are going to call this method using feign client
+
+Steps for feign client:
+1) dependency
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+2) in application java	(that has main method)
+	under @SpringBootApplication annotation
+	add @EnableFeignClients
+
+3) create an interface that will act as proxy
+	@FeignClient(name = "employee-api", url = "http://localhost:8383")
+public interface EmployeeApi {
+	@GetMapping("/employees")
+	public String [] getAllEmployees();
+}
+
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.controller.EmployeeApi;
+
+@SpringBootApplication
+@EnableEurekaClient
+@RestController
+@EnableFeignClients
+public class DepartmentService1Application {
+	@Autowired
+	private EmployeeApi ea;
+	
+	@GetMapping("/")
+	public String home()
+	{
+		String employees="";
+		for(String s : ea.getAllEmployees())
+		{
+			employees+=s+"<br/>";
+		}
+		return "Hi welcome to department service. The employees are "+employees;
+	}
+	public static void main(String[] args) {
+		SpringApplication.run(DepartmentService1Application.class, args);
+	}
+
+}
+
+============================================================================
+Rest Template
+now i remember 
+	i have a core java program that can access rest api 
+
+	NETCLIENT CODE IS ADDED IN DEPARTMENT SERVICE PROGRAM. KINDLY REFER
+--------------------------------------------------
+i am going to create an angular project now
+	ng new first-project --routing --style=css
+
+1) Difference between Angular JS and Angular
+	i) angular js version is 1		v2 onwards is angular
+	ii) angular js used javascript		angular uses Typescript	and javascript
+	iii) angular js was MVC based		angular is module, component, service
+	
+Latest version of Javascript is	
+	Javascript ES6		ECMA Script		shortly 	ES6
+
+every time when javascript new version was introduced, an upgradation of browser was required
+	when new features of js was intended, inconvenience of browser upgradation was there
+
+solution:
+	introduce a new language that can be compiled to Javascript ES6
+
+The angular projects we are creating are not deployed as it is.
+They are built to convert all modules into simple HTML and Javascript.
+
+The new language is Typescript	(developers)	not users
+this allowed them to introduce a new version of angular every 6 months
+
+
+Typescript vs Javascript
+	1) javascript is not compiled 		errors are identified only when we run the program
+	2) typescript is compiled	
+	
+js
+	var age;
+ts
+	age:number=20;
+	x:string|number;
+	x=20;
+	x="20";
+
+	x:any;			//any type	it can be null also
+
+	x:never;			useful in functions that never return. (exception occurs for sure)
+
+Tuple
+	x:[string,number]=["Rama",20];			to receive composite types from rest api
+	x:any;			
+
+	dob:Date=new Date();				//almost like java
+
+typescript
+	classes
+	interfaces
+	overloading 
+	overriding
+	constructors
+	static
+	optional parameters
+
+lets see an example:
+-------------------
+
+let x:number=20;
+let y:number=30;
+let result:number=x+y;
+console.log(result);
+
+the above is saved as one.ts
+
+tsc one.ts
+	after compilation, one.js is produced			
+
+
+var arr=[1,2,3,4,5,6];
+
+let arr:number[]=[1,2,3,4,5];
+
+======================================
+we have created an angular project "first-project"
+once done, 
+a folder is created
+check inside the folder
+	cd first-project
+
+then 
+	ng serve -o
+
+o will open the browser once it is ready
+
+lets open vs code
+
+
+An angular project can have
+	1 or more modules
+
+1 module is already created. it is App module
+
+app.module.ts			
+	this file contains the declaration of all components and service and pipes created in this project that can 	be used across the project
+app-routing.module.ts
+	this is created because, we chose "routing" while creating our project
+
+app component
+	app.component.html			template		HTML file
+	app.component.css			style			css file
+	app.component.ts			code			ts
+	app.component.spec.ts			unit testing		karma
+
+	A component may not have all these files but minimum .ts file must be present
+
+We need to understand 
+	what is a component
+
+1) Angular CLI i can create component using command
+	ng g c <<componentname>>
+	(or)
+	ng generate component <<componentname>>
+
+2) create a .ts file
+	in that file
+	create a class
+	is decorated by @Component decorator
+
+	@Component({
+		template (or) templateUrl
+	})
+	export class AppComponent
+	{
+	}
+
+
+templateUrl
+	we give html file name
+template
+	we type the html code here itself
+
+
+
+
+SPA
+	Single Page Application
+
+	that page is "index.html"
+
+
+template quote (not single quote) is used to write multiline template
+`<li>India</li>
+<li>India</li>
+<li>India</li>
+<li>India</li>`
+
+
+whenever we create an angular project,
+it is not good idea to write everything in index.html 
+	only plug app component in index.html
+		<app-root></app-root>
+
+this app component should provide scaffolding ie., the structure of the website
+	ideally, it should have navbar (menu bar)
+	
+while creating project,
+	every component can be created, tested individually by plugging that component in app component
+
+after test all components one by one by pluggin in app component, 
+
+	then do routing
+like 	when i click menu it should be shown
+
+
+1) signup
+2) login 
+3) one crud operation		like 	Product component
+4) cart				add/ remove to and fro cart
+
+
+1) components
+2) services
+3) pipes		custom pipes
+4) routing
+5) @Input
+6) @Output	event emitter
+7) ng-content
+8) observables	rxjs
+9) http client that access rest api		CORS
+10) Template driven forms			learnt 	(property binding, event binding, two way data binding)
+11) reactive forms
+
+Learn to create component
+
+	ng g c signup
+
+what happens?
+1) the following files are created
+	signup.component.html
+	signup.component.ts
+	signup.component.spec.ts
+	signup.component.css
+
+2) app.module.ts 	is updated
+	in declarations section it is declared. If it is not declared, it cannot be used in this project
+
+
+we have created signup component.
+	if you observe .ts file
+
+	export class SignupComponent
+
+	suppose, if i gave file name as "sign-up", then - means, next word so it will be "SignUpComponent".
+	why "U" becomes capital? because "-" is there
+
+------------------------------------------------------------------
+i have a form
+	there are 2 approaches in angular when it comes to form handling:
+	1) template driven forms	(FormsModule)
+	2) reactive forms		(ReactiveFormsModule)
+
+	we have to import these modules in our project
+	lets go to "app.module.ts"
+
+
+Forms Module 
+	help us in handling forms.
+	1) binding
+		i) property binding
+		ii) event binding
+		iii) two way data binding		
+
+
+angular js
+	had something called "interpolation"			{{}}	
+
+lets see an example for interpolation now:
+	declare a variable and assign a value 	(do this in .ts file)
+	display the value of variable using interpolation
+
+in signup.component.ts
+	export class SignupComponent
+	{
+		name:string='Jag';
+
+
+
+in signup.component.html
+	User Name: <input type="text" name="" id="" class="form-control" [value]="name">    
+
+notice that [] in value property
+	that treats "name" as variable rather than value
+
+we see value of "name" is bound to text box
+
+property binding is 1 way.
+	The value of .ts variable is bound to the property of textbox
+	but the value typed in textbox is never assigned to that variable
+
+so i need 2 way data binding.
+--------------------------------
+	User Name: <input type="text" name="" id="" class="form-control" [value]="name">    
+	User Name: <input type="text" name="username" id="" class="form-control" [(ngModel)]="name">    
+
+	NOTICE the "name" property is compulsory for 2 way data binding
+
+
+3) Event binding
+	<input type="button" value="Login" class="btn btn-success" (click)="fn1()">&nbsp;
+
+this function "fn1()" is defined in .ts file
+bound to an event of button
+
+1) property binding
+2) two way data binding
+3) event binding
+
+
+
+
+Home work:
+-----------
+checkboxes in 2 way data binding in template driven forms in angular
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
