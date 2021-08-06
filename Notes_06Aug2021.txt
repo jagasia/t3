@@ -359,33 +359,12 @@ Home work:
 checkboxes in 2 way data binding in template driven forms in angular
 
 
+today's project git 
+
+	https://github.com/jagasia/first-project.git
 
 
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+git clone https://github.com/jagasia/first-project.git
 
 
 
