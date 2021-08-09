@@ -1,0 +1,213 @@
+So far we have learnt
+in Angular
+1) Property Binding
+2) Event Binding
+3) Two way data binding
+	using FormsModule
+	This technique help us to do "Template Driven Forms"
+------------------------------------------------------
+Today,
+	we learn to create "Reactive Forms"
+
+what should we import in app.module.ts		?
+	ReactiveFormsModule
+
+In reactive form module,
+	we create an object representation of the form
+
+Since we already learnt REST AP
+	what does the read method returns	
+	@GetMapping("/user/{id}")
+	public User findUserById(@PathVariable Long id)
+	{
+		User user=........		from dao, you get an object
+		return user;
+	}
+
+	the above method returns an object of User
+
+	Post Mapping 	accepts an object of User
+
+	considering these 2 scenarios, we understand one thing.
+	angular should send an object or receive an object
+
+
+	<form>
+	</form>
+		the signup form should be converted into object of user type
+		in Template driven forms (old) we will be assembling an object of user type
+
+	But in Reactive form (new) the form is already represented as an object		(JSON)	{}
+
+so we create component called "product"
+
+	ng g c product
+			product.component.html
+					.ts
+					.css
+					.spec.ts
+
+		updated the app.module.ts			declarations:		ProductComponent
+
+	in reactive forms, it is always good to start from .ts code rather than template .html
+	
+
+	we use "FormBuilder"	(is a part of ReactiveFormsModule)
+		is used to create the form group object
+	we should inject "fb" into the constructor.		Dependency Injection (is a feature of Angular ie., not found in angular js)
+			constructor(private fb:FormBuilder) { }
+
+
+
+{{ productForm.value | json }}
+		this pipe symbol | is used to transform (in this example) an object into JSON string
+		is similar to JSON.stringify(obj);		//returns JSON string
+
+The below will patch an object to the entire form:-
+this.productForm.patchValue(JSON.parse(this.txt));
+
+
+	var product=JSON.parse(this.txt);
+	the below will patch an individual component of the form with a value of object.
+    this.productForm.controls['name'].patchValue(product.name);
+
+Reactive forms 
+	1) form is represented as an object
+	2) object contains form group.
+		value			object 
+		errors			collection
+		controls		collection
+	3) if any of the control has error, then the form error property also has error
+	4) valid property
+		entire form
+		every control
+
+		if any of the control is not valid	(mean errors) then the form valid propert also is false
+
+		if form.valid then enable submit button
+
+
+Validation
+	data entry mistakes are there, the form should not submit or reach the BACK END
+	
+
+
+    <div [ngClass]="{'has-error':productForm.controls['id'].errors}">
+        <input type="text" name="" id="" formControlName="id" class="form-control">
+        <div *ngIf="false" class="alert-danger">
+            Id cannot be blank
+        </div>
+    </div>
+
+
+
+	<div class="has-error">					the has-error is applied unconditionally
+	<div [ngClass]="{'has-error':true}">
+
+	<div [ngStyle]=""					css  	property "background-color"
+
+
+<div [ngStyle]="{'font-style':'italic', 'color':color, 'background-color':'blue'}">
+<div style="font-style:italic; color:white; background-color:blue">
+both of the above lines server same purpose.
+
+	but how [ngStyle] can make difference,
+		we can use variables in ngStyle
+
+
+ngClass		boolean					a class is applied to the element conditionally
+ngStyle		css property and value.		only thing is 	we can use variables
+
+
+
+date is very simple when we send an object from angular to rest api
+	sending date as String is complicated
+	we do not worry about format of date when we send date as Date type
+
+	in typescript
+		var dob=new Date();
+		var dob:Date=new Date();
+		
+
+1) components					LEARNT
+2) services
+3) pipes		custom pipes
+4) routing
+5) @Input
+6) @Output	event emitter
+7) ng-content
+8) observables	rxjs
+9) http client that access rest api		CORS
+10) Template driven forms			learnt 	(property binding, event binding, two way data binding)
+11) reactive forms
+
+
+
+
+wHAT IS The need for Pipe
+---------------------------
+	|
+
+
+the value obtained from backend 	
+	india
+
+but when i display i should display it as 
+	India
+
+india is transformed into India
+
+ece	is transformed into ECE
+
+1234.5678	IS TRansformed into 1234.57
+
+
+Pipe is used to transform a data into another format
+
+
+as many pre defined pipes available
+
+1) json
+2) uppercase
+3) lowercase
+4) titlecase			first letter of every word to be in upper case
+5) date:'dd-MM-yyyy'		
+6) currency pipe
+
+
+To create custom Pipe:
+	ng g pipe jag
+
+what happens when we execute the above command:
+	1) class JagPipe implements PipeTransform		(interface)	and decorated by @Pipe
+		@Pipe({
+  name: 'jag'
+})
+	2) override transform() method......			take first param as input, followed by rest param
+							what is rest param?		parm array ...	any no of arg
+
+	what we do inside that method?
+		we transform the input we received
+	3) in app.module.ts
+		declare this pipe (just like any component)
+
+Example for custom pipe:
+	lets create a pipe, that will count the number of letters present in the string and display
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
