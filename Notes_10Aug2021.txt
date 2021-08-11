@@ -1,0 +1,108 @@
+@Input
+@Output
+ng-content
+
+What is the use of input decorator?
+	It is used when there is a parent child relationship between components
+	in our example, 
+		AppComponent	is the parent
+		SignupComponent is the child component
+
+	if Parent component need to give input to the child component
+		
+	we are in app.component.html
+		<app-signup title="Sign up Form"></app-signup>			Sign up Form is a constant here
+		<app-signup [title]="title"></app-signup>			title is a variable here
+		<app-signup>this is also an input to the child component</app-signup>
+-----------------------------------------------------
+What is the need for output decorator?
+
+Imagine if someone is creating a component called "LoginComponent"
+	they design the UI
+		User Name...............
+		Password ...............
+			Login 	Reset
+
+	but somebody who created the component
+	is not going to use that component
+	Rather, we are going to use the component
+		So it is us, who should validate the username and password
+
+	if the creator of the component, need to validate, it is simple. They can handle the click event of login btn
+	now that we got a component and we plug it like
+		<app-login></app-login>
+	where do we have the option to validate the login?????here??????
+		<app-login (login)="fnLogin()"></app-login>
+
+	this means, handle an event called "login"	(we know click, focus, blur, but what is login event?)
+
+	The child component is going to define a new event called login event. And they will emit this event during the login button click.
+	Parent component can handle the "login" event.
+
+
+
+ng-content
+----------
+		<app-signup>this is also an input to the child component</app-signup>
+
+where will the content be displayed in the child component?
+	<ng-content></ng-content>	
+
+
+1) components
+2) services		PENDING
+3) pipes		custom pipes
+4) routing		PENDING
+5) @Input	
+6) @Output	event emitter
+7) ng-content
+8) observables	rxjs	PENDING
+9) http client that access rest api		CORS	PENDING
+10) Template driven forms			learnt 	(property binding, event binding, two way data binding)
+11) reactive forms
+
+
+Routing:
+---------
+	routing allow us to map the "url" to component
+
+	LoginComponent	we can assign a path called "login"
+	
+
+In order to do routing, we enable routing 
+	1) while creating the project	(or)
+		--routing		in ng new command
+		or while the project is creating, it ask us to say "yes/no" for routing 
+	2) after the project is created
+		create a file 	app-routing.module.ts
+			const routes: Routes = [];
+
+		@NgModule({
+  			imports: [RouterModule.forRoot(routes)],
+			  exports: [RouterModule]
+			})
+		export class AppRoutingModule
+
+	3) in app.module.ts
+		under imports, 
+			AppRoutingModule
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
