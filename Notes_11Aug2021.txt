@@ -1,0 +1,124 @@
+In angular,
+component		
+service
+pipe
+routing
+Input
+Output
+ng-content
+observable 	rxjs
+http client
+
+---------------------
+Components		
+	Life cycle
+		I found very important when we tried to capture the changes that occur
+
+	Login - Logout
+		the menu component was not able to update whenever the login status is changed
+
+	initially we did it in 
+		ngOnInit()		
+			this occurs only once in the component life cycle
+
+	We will identify all the life cycle method of a component. 
+	Before that lets put us in a situation that demands life cycle methods
+
+
+We are going to access the REST API from angular
+
+in angular we have 
+	Signup
+	Login
+
+1) Entity
+	User.java
+2) UserRepository			interface		that extends Jpa repo
+3) Service
+	UserService
+4) Controller
+	UserController
+
+
+
+we have created a reactive form for signup
+
+
+when the submit button is clicked, the entire form content is sent as an object
+
+to send data to REST API
+	WE need to use http client
+
+go to app.module.ts
+	import			HttpClientModule
+
+any program that access external world should be service
+	ng g s user
+
+
+A class decorated by @Injectable decorator
+	@Injectable({
+	  providedIn: 'root'
+	})
+
+
+In service class,
+	we need to inject HttpClient component
+
+
+import { Observable } from 'rxjs';
+
+rxjs		-	Reactive Extension to Java Script
+
+
+  addUser(user:any):Observable<object>
+  {
+    return this.http.post(this.url,user);
+  }
+
+	the above method returns an observable means, the response comes asynchronously
+
+	the response may not come immediately (or) also means, the caller will not wait for the response.
+	whenever a function calls another function that returns observable, then the calling function will not wait for the response.
+
+	When response comes, the observable will call the call back method.	
+
+	thats why we subscribe any observable
+
+	when a function returns observable, we subscribe
+
+	subscribe(callback function)
+
+
+Access to XMLHttpRequest at 'http://localhost:8080/user' from origin 'http://localhost:4200' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+couple of reasons to get the above error:
+CORS stands for Cross Origin Resource Sharing	policy
+
+1) @CrossOrigin annotation is not used in the controller
+2) another reason could be the data sent in a format not understood by the controller. 
+	Required headers are not found to understand the info sent 
+
+
+
+sending email otp
+
+i have to create an email "gmail" for this project.		(i have already created)
+in gmail manage accounts, 
+	allow app access			Less secure app access		ON
+
+I have a java code that will send email from given email password. 	To address can be anything
+
+
+
+
+
+
+
+
+
+
+
+
+
+
