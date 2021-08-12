@@ -1,0 +1,33 @@
+In angular,
+component		
+service
+pipe
+routing
+Input
+Output
+ng-content
+observable 	rxjs
+http client
+
+---------------------
+Components		
+	Life cycle
+
+There are interfaces for life cycle
+and there are methods
+
+methods:
+ngOnInit()			only once
+ngDoCheck()			if very frequently called. 	
+ngOnChanges()
+ngAfterContentInit()
+ngAfterContentChecked()
+ngAfterViewInit()
+ngAfterViewChecked()
+ngOnDestroy()			only once
+
+
+all these methods are part of corresponding interfaces
+
+ex:
+	ngOnInit()	method belongs to OnInit interface
