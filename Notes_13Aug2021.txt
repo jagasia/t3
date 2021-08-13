@@ -1,0 +1,122 @@
+First 10 days:-
+GIT
+Bootstrap
+jQuery
+Spring Rest with spring boot
+Angular
+Microservices
+---------------
+Remaining 10 days:-
+logging
+file upload, displaying images		(today)
+ng build				(today)
+Spring security
+Containers
+Docker
+Kubernetes
+Cloud
+Splunk
+AWS CI/CD, 	MSK
+
+
+What is the need for Logging?
+What is Log4j?
+How it will be useful?
+
+error message
+
+
+Spring CLI
+
+	spring run something.groovy
+
+
+Rolling file logger is nothing but will create new file once a specific size is reached
+
+Convention in logging:
+the stdout logger usually display time of the event.
+the file logger stores the date and time of the event.
+
+
+file upload, displaying images		(today)
+
+Every user when  they signup, they can upload their profile picture also.
+
+uploading picture as a separate form only.
+BUT I AM GOING TO SHOW HOW we can upload pic as a part of form that includes other details also (fname, lname, etc)
+
+why they upload image in a separate form???
+
+1) GET mapping it is not possible
+2) POST PUT are allowed
+
+in rest api
+public void addUser(User user)
+	here, lob is not accepted
+
+so what we are going to do is?
+	public void addUser(@RequestParam String username, String password, ....., MultipartFile file)
+
+in angular side,
+	create a formdata and send
+		
+LET's add a pic column in the user table in mysql 
+	ALTER TABLE USER ADD (pic longblob);
+Lets add a property in java class	User.java
+
+public User signuppic(@RequestParam("username") String username, @RequestParam String password, @RequestParam String firstName,@RequestParam String lastName,@RequestParam String dateOfBirth,@RequestParam String email, MultipartFile pic)
+
+formdata.append('username','');
+formdata.append('password','');
+formdata.append('firstName','');
+formdata.append('lastName','');
+formdata.append('dateOfBirth','');
+formdata.append('email','');
+formdata.append('pic','');
+
+
+in jsp:
+
+
+<form	method="POST" action="signup">
+	............
+	...........
+	...........
+	..........
+	submit
+</form>
+
+query string
+
+?username=abcd&password
+
+
+url?key=value			@RequestParam
+url/value			@PathVariable
+
+
+
+
+jersey framework
+
+spring framework
+
+spring boot makes it easy
+	content negotiation
+	automatically choose the best format based on data received or sent
+
+consumes
+	parameter content types
+produces
+	return value types
+
+
+
+----------------------------------
+
+
+https://github.com/jagasia/food-project
+https://github.com/jagasia/image_angular_sprint
+https://github.com/jagasia/image-angular-spring
+https://github.com/jagasia/t3
+
