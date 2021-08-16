@@ -1,0 +1,139 @@
+Spring security using OAuth2 JWT
+Splunk
+Docker
+Kubernetes
+AWS
+----------------------------------------
+Spring Security
+	If you remember how we have implemented user authentication so far
+
+User user = us.read(username);
+
+in any crud operation
+	Jpa repo	
+
+		read
+				readById		primary key
+		create
+		update
+		delete
+
+
+User user = us.read(username);
+	this is what we normally do.	Find user by primary key (id). 
+Spring security also do the same
+
+what is spring security?
+	Spring framework provides authentication, authorization mechanism for both MVC, REST api also.
+	We are learning spring boot security	ie., we use starter dependency
+
+Authentication
+	validating the identity of the user that he claims to. 	(i am a valid user now)
+Authorization	
+	check if this user is permitted to do this operation or not.
+	(even if you are a valid user, you are allowed to do something and not allowed to do something)
+	User Access Permission
+		Admin only can do this, users are not allowed
+
+Lets learn authentication first
+Open Authentication?	shortly OAuth2
+	allows applications to be authenticated by external authentication services
+		like 	gmail, facebook, github, etc
+
+	Have you ever seen applications that allow you to login using facebook account or gmail
+
+	we are not going to write authentication code in our controller.
+
+
+	This has become a cross cutting concern now. ie., Some other team will take care of that authentication part.
+
+	In my controller, 
+		method1
+		method2
+		method3
+
+	If user is authenticated while access any of the above method, then he should be allowed to access other methods also until he logs out.
+
+	so, we do not write authentication code in each method. neither check if he is logged in or not. 
+	That also will be taken care by authentication service
+
+1) Basic authentication:
+	i) simple example with username and password without database
+	ii) we have our own database. (mysql) that contains users as records.
+		use jpa repository (or any repo or jdbc or anything)
+
+2) GCP authentication:
+	if you want gmail users to login to your application
+		use the same steps for facebook also
+
+
+
+
+
+Basic:
+	1) create a spring boot application
+		spring web
+		spring data jpa
+		mysql
+		spring security
+		oauth2 client
+
+
+once a project contains "spring security starter" dependency, now security auto configuration will be done
+
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+
+
+1) configure web security using
+	i)	implementing web security configurer interface
+	ii)	extending web security configurer adapter		(choose this)
+
+
+user
+efd4a1e4-5682-4464-9834-014e8d5bc4c3
+
+Spring security
+	User				entity
+	UserDetails
+	UserDetailsService
+
+
+
+so far what we have done:
+	basic authentication		using dummy username and password
+	jpa repository 			username and password in db
+
+OAuth2
+	open authentication 
+		gmail
+		facebook
+
+GCP
+	create an application
+		security token and secret key
+		this will be used in application.properties	
+
+
+
+console.cloud.google.com
+
+ICT
+Code challenge
+	marks related to code quality
+
+
+hands on challenge
+	code produces correct output
+standards and good practices
+
+if
+{
+}
+
+
+multiple return statements
+
+comments
+	code is commented out.		forgot to delete.
+	comments explaining a method
+
