@@ -1,0 +1,240 @@
+First 10 days:-
+GIT
+Bootstrap
+jQuery
+Spring Rest with spring boot
+Angular
+Microservices
+---------------
+Remaining 10 days:-
+logging
+file upload, displaying images		(today)
+ng build				(today)
+Spring security
+Containers
+Docker
+Kubernetes
+Cloud
+Splunk
+AWS CI/CD, 	MSK
+
+-------------------------------------------
+Spring security
+	basic authentication
+		user/password token
+		dummy username/password	in our security configuration using UserDetailsService
+		jpa repository to authenticate users based on records available in the database
+		GCP
+		Facebook api		client key and client secret
+			
+	authorization, jwt
+	angular + spring boot rest api integration		we need to jwt 
+
+------------------------------------------
+What is container?
+Why we need containers?
+
+	i heard about container when i learnt j2ee	
+		web container
+		ejb container
+
+	web container is like a special jvm
+	it provides all generic services.	
+	What we do is write code for only "application specific" requirements.
+
+Now, here,
+	container is something that provides all that is required to "run" an application.
+
+	
+	have you ever wonder the project runs in one computer. but not in another computer?
+	what could be the reason?
+		i) Operating System may be different
+		ii) 32-bit 	or 	64-bit
+		iii) installed version		or java itself is not installed
+		iv) system files missing
+		
+	That is where, we need something called Container
+		container should be a component that provides runtime, storage, all that are required to run an 		application	
+	
+	In my computer, (windows), how can we run a project that runs only in linux?
+		VMware		Virtual PC		
+
+		concept of virtualization that allow a computer to host a virtual OS environment 
+
+	obviously we need to compare, containers to vmware/virtual pc
+
+	But if we compare, virtual pc with container, 
+		virtual pc provides all the features of OS but may not provide the features required for running our 		project.	(install java, install system services, supporting tools)
+
+	Virtual PC is heave weight.
+
+	Container is not complete virtualization of OS. but the env required for running our application.
+	Container is light weight.
+
+	If we have a container, then we do not worry about the target computer's configuration.
+
+	If we deploy our application in a container, then we can run this container anywhere, provided container tool is installed		(ex:	docker)
+
+	Example:
+		Docker		is most preferred way of deployment
+		Kubernetes
+
+	
+	If client has docker installed in their computer, then we can run our project in their computer NO MATTER they have java, mysql, apache tomcat, in their computer or not.
+
+
+	https://docs.docker.com/docker-for-windows/install/
+
+
+	
+docker image
+	ISO			windows CD, we created image of that CD that can be loaded using ISO
+	
+docker container
+
+
+================docker installation steps======================
+install docker for windows 
+	https://docs.docker.com/docker-for-windows/install/
+	after downloading 
+		Docker Desktop Installer.exe
+	execute the above downloaded file
+
+Restart computer
+
+update wsl:
+	Download the Linux kernel update package
+	https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+	execute it
+
+Restart computer
+
+
+==========================================================
+hub.docker.com
+	sign up to this portal.
+	This is remote repository where, we can push docker images. 
+	or from here, we can run docker images (signup is not required)	
+		Running docker images already deployed in docker hub is free 	
+	
+
+First demo in docker:
+--------------------
+	run an image which is already there in docker hub portal (remote repository)
+	that remote image will become a local image (downloaded)
+	image, when run, becomes a container
+
+docker image ls
+(or)
+docker images
+		the above command lists all the local images present in our pc
+
+lets run an existing image in docker hub portal
+
+
+
+docker run -p 8085:5000 jagindia/mvc-1
+
+docker container ls
+(or)
+docker ps
+
+To stop a container,
+docker stop containerid
+docker stop -f containerid
+
+To remove a container
+docker rm containerid
+
+To remove an image:
+docker rmi imageid
+docker rmi -rf imageid
+
+
+
+
+docker run -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+
+Lets run an existing application in docker.
+1) open cmd / terminal
+2) 
+3) docker run -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+4) http://localhost:5000/hello-world
+	check this in a browser
+	(also)
+http://localhost:5000/hello-world-bean
+
+
+
+
+
+Next demo,
+	we should deploy our application in docker hub
+
+1) create an application
+	spring boot rest api
+2) if we need to create an image of an application,
+	we need to provide the details that are required to run an application in a file called:
+		Dockerfile
+	this file do not have any extension
+	in this file, we specify
+		java version
+		port number
+		jar/war file location
+		jar/war file name
+		command used to run this jar/war
+
+3) 
+	i) create an image of the application
+	ii) tag this image to a docker hub repository	(in fact, we create a repository now, and then tag)
+	iii) push the image to docker hub
+
+
+Create a spring boot application
+	create a rest controller
+		getmapping 	/
+			hello t3 world
+
+right click the project
+	run as
+		maven build
+			goals:	clean install
+
+	this will create the jar file in target folder
+		target/hello-t3-0.0.1-SNAPSHOT.jar		(if we are currently in project folder)
+
+Step for creating a docker image:
+	we are currently in project folder.
+		pom.xml	
+		target/
+		....here.... create a file	"Dockerfile"
+
+
+let us create a repo in hub.docker.com
+	jagindia/hello-t3
+
+i) create docker image
+	docker build -t hello-t3 .
+2) tag it to the hub.docker repo		(jagindia/hello-t3)
+	docker tag hello-t3 jagindia/hello-t3
+3) push image to hub
+	docker push jagindia/hello-t3
+
+
+
+to run this image from any computer (that has docker)
+	docker run -p 8080:8080 jagindia/hello-t3	
+
+
+
+
+
+
+
+
+
+
+
+docker image ls
+(or)
+docker images
