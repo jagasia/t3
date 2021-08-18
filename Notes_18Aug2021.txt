@@ -1,0 +1,111 @@
+First 10 days:-
+GIT
+Bootstrap
+jQuery
+Spring Rest with spring boot
+Angular
+Microservices
+---------------
+Remaining 10 days:-
+logging
+file upload, displaying images		
+ng build				
+Spring security
+Containers
+Docker					(today)
+Kubernetes
+Cloud
+Splunk
+AWS CI/CD, 	MSK
+
+-----------------------------------------------
+Yesterday
+	we created spring boot rest api and 
+	we created an image of that application in docker.
+	we tagged it to a repository in hub.docker.com
+	we were able to run that image in any computer (where docker is installed) and that became a container
+	
+
+Today
+	we are going to create a spring boot application with mysql back end connectivity 
+	create image in docker
+
+
+---------------------------------
+Spring boot application + mysql can be achieved in docker using 2 ways:
+	i) using network
+	ii) docker-compose		yml that specifies multiple services that can be run together as multiple containers
+
+
+What is the need for network?
+	2 entities here,
+		i) application / client app	(spring boot rest api)		container 1
+		ii) mysql							container 2
+
+	Between these 2 containers, we need to network
+
+---------------------------------------------------
+mysql image is there in docker hub		hub.docker.com
+	we will get a local copy of this image
+	when run, this is a container
+
+
+Demo:
+	using network, we are going to run spring app + mysql
+
+
+1) rest api
+2) mvc app				mvc-mysql
+	entity:	Product
+
+
+since we added dependency "data-jpa", we must configure the application.properties for DataSource
+
+
+we have created the mvc project now.
+
+Lets build the project and generate war file
+
+right click project
+	run as maven build
+		clean install
+
+
+lets configure mysql in docker:
+---------------------------------
+1) create a network
+		docker network create mvc-mysql
+2) check network
+		docker network ls
+to remove network
+		docker network rm nwid
+3) we are going to configure mysql container now:
+		docker container run --name mysqldb --network user-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=t3 -d mysql:8
+	
+We will use the image provided by dockerhub to run as container. Also we will specify following when running the container
+a. name of the mysql container
+a. What should be the password for MYSQL
+b. We want to create the Database named bootdb.
+c. specify the network user-mysql on which this container should be created.
+d. start the container in detached mode.
+
+
+docker-compose.yml
+	whenever we want to run more than 1 container together
+
+1) to run our spring boot app with mysql together
+2) MSK
+	Managed Kafka Services
+		producer
+		consumer
+
+
+
+/col1/col2
+	from current url, it will append new url
+	to prevent that
+		        <li><a [routerLink]="[{outlets: {'col2': ['/','branch']}}]">Branch Page</a></li>
+
+
+
+
