@@ -1,0 +1,109 @@
+First 10 days:-
+GIT
+Bootstrap
+jQuery
+Spring Rest with spring boot
+Angular
+Microservices
+---------------
+Remaining 10 days:-
+logging
+file upload, displaying images		
+ng build				
+Spring security
+Containers
+Docker					(today)
+Kubernetes
+Cloud
+Splunk
+AWS CI/CD, 	MSK
+
+--------------------------------
+Yesterday, we learnt to deploy spring mvc project in docker that depends on mysql database that runs in another docker container using network.
+
+Today,
+we do the same with "docker-compose.yml"
+
+@RequestBody
+	when we submit form to a controller, we should not use @RequestBody.
+	we need not use that annotation.
+
+	Request body is used when we submit from a post man (body contains the json) or from angular
+
+	<form action....			request body is not suitable
+
+
+
+
+
+
+yaml language
+	space should be use. 	tab should not be used
+---------------------------------
+in our mvc project,
+	mvc-mysql
+
+	I have updated the application.properties file
+		password is set to rootuser
+		localhost is not changed. Because, our endpoint defined in docker-compose.yml is localhost only
+		that "localhost" maps to mysql (global docker image)
+
+	generated the jar file using
+		clean install -Dmaven.test.skip=true
+
+	using Dockerfile
+		we build a local image
+			docker build -t mvc-mysql .
+		tag this to global image
+			docker tag mvc-mysql jagindia/mvc-mysql
+		push the image
+			docker push jagindia/mvc-mysql
+
+
+Now,
+	let's update our docker-compose.yml
+	
+
+
+
+
+
+
+
+3 gb space
+	storage			3 gb
+	compute			container that allow our java program to execute and produce output
+	network			VPC
+
+
+if my web application attracts plenty of users, my cloud services should be able to scale to the need
+infra upgradation is required
+	multi core processors
+	mainframe
+we increase the cores / processors to power our application
+this will end up with clustered server architecture
+
+we can provision or deprovision so easily
+
+in godaddy
+	not auto-scale
+i subscribed for 3gb. i need to subscribe more.
+
+but in today's trend
+	AWS provides auto-scaling
+
+Elastic scaling
+	
+Scalability
+	ability to grow or shrink	with existing infra
+Elasticity
+	scalability by adding or reducing infra
+
+
+
+
+
+
+
+
+
