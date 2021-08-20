@@ -1,0 +1,146 @@
+First 10 days:-
+GIT
+Bootstrap
+jQuery
+Spring Rest with spring boot
+Angular
+Microservices
+---------------
+Remaining 10 days:-
+logging
+file upload, displaying images		
+ng build				
+Spring security
+Containers
+Docker				
+Kubernetes
+Cloud
+Splunk
+AWS CI/CD, 	MSK
+
+-----------------------------
+Yesterday
+	we deployed a spring application + mysql in docker
+	we used docker-compose.yml 
+		we define two services:
+			1) spring app
+			2) mysql db
+
+Day before yesterday, we used docker network to do the same. 
+
+What is the cloud?
+Cloud service models:
+	IAAS
+	PAAS
+	SAAS
+
+Deployment model:
+	private
+	public
+	hybrid		public + private
+
+Cloud Service Providers	
+	AWS, Azure, GCP
+
+Kubernetes
+	in aws, EKS	Elastic Kubernetes Service
+Container
+	in aws, ECS	Elastic Container Service
+
+What are the services provided by Cloud?
+	i)	Storage
+			Elastic Block Storage (EBS)		
+			Elastic File System	(EFS)
+	ii)	Compute
+			Elastic Compute Cloud	(EC2)
+				Elastic Beanstalk		(we are going to use today)
+				ECS, EKS
+				Relational Database Service (RDS)
+					mysql database will be created here
+	iii)	Network
+			VPC, subnets, security groups
+
+
+
+1) Deploy spring boot application + mysql in AWS
+	i) creating account in aws
+	ii) deploy our jar/war in Elastic Beanstalk
+	
+Scalability
+	ability to grow or shrink to meet the demand/need
+		using the existing infra
+
+Elasticity
+	Elastic scalability
+		by extending infra	
+		by provisioning or deprovisioning infra
+			subscribe more resource or less based on need
+Autoscaling
+	AWS
+	
+
+
+1) create an application in aws
+	sample application is already available in aws itself.	
+
+2) we create a spring boot application (simple. which does not have mysql database)
+
+3) add mysql database to the existing application
+
+4) mvc project with front end and back end
+
+
+
+
+1) login to aws
+2) in Elastic Beanstalk
+	create application
+		name
+		java is the env
+		configure more option
+
+
+So, we have created an application, and configured VPC with availability zone as south1-a and south1-b
+
+in application.properties: change the server.port			8080 never worked. i changed to 5000
+
+
+mysql:
+	once we create a mysql database in our application configuration,
+	it will not allow public access unless configured
+		security groups
+			default
+				inbound rules
+					by default:		all tcp
+					we will change it to 	all traffic	(this will allow applications to acc)
+
+
+
+root
+rootuser
+
+
+
+
+
+
+firstName	FIRST_NAME
+
+
+so we deployed .jar file in "java" environment
+what to do? to deploy war?????
+create an application
+	env should not be "java" env, but "tomcat"
+
+an application depends on 
+	vpc
+	rds database sometimes
+
+we can delete the application first		GOOD IDEA
+	before deleting the the application, if we delete, database, or VPC, or subnet
+
+then if we try to delete the application, it will tell that this application was using db, vpc that is removed now. You cannot delete the application.
+
+
+delete VPC
+	
