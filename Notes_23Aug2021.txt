@@ -1,0 +1,159 @@
+
+#spring.datasource.url=jdbc:mysql://localhost:3306/t
+spring.datasource.url=jdbc:mysql://mysqldb:3306/t3
+spring.datasource.username=root
+spring.datasource.password=root
+
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
+spring.jpa.properties.hibernate.id.new_generator_mappings = false
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql = false
+spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+logging.file.name=jag.log
+logging.logback.rollingpolicy.file-name-pattern=MyApp-%d{yyyy-MM-dd}.%i.log
+
+
+
+
+First 10 days:-
+GIT
+Bootstrap
+jQuery
+Spring Rest with spring boot
+Angular
+Microservices
+---------------
+Remaining 10 days:-
+logging
+file upload, displaying images		
+ng build				
+Spring security
+Containers
+Docker				
+Kubernetes
+Cloud
+Splunk
+AWS CI/CD, 	MSK
+-----------------------------
+In previous session, we deployed .jar, .war into AWS elatic beanstalk
+Today,
+	i) we are going to deploy "Docker" images into the AWS - i) ECR	ii) ECS
+	ii) can we create a docker image of a spring boot application without using "Dockerfile"
+
+	spring boot version 2.30 onwards, we can generate docker image without need of Dockerfile
+
+1) ECR
+	AWS Elastic Container Registry
+		deploy docker images into aws
+
+	This is almost similar to deploying images into docker hub
+
+	i) created a spring boot app called "ecr-demo-1"
+		with a rest controller
+			getmapping for "/"
+	
+	ii) lets create a docker image for this project using spring cli
+			mvn spring-boot:build-image
+
+		docker.io/library/ecr-demo-1:0.0.1-SNAPSHOT
+
+
+in aws
+	login 
+	got to ECR
+		CREATE a public repository
+		check inside the repository
+
+	in env variables, 
+		aws account id
+		secret key
+		region
+	these values must be set.		If we do not have env variables, then
+		aws configure
+
+
+	docker tag t3-1:latest public.ecr.aws/x8a2r0l1/t3-1:latest
+	docker tag docker.io/library/ecr-demo-1:0.0.1-SNAPSHOT public.ecr.aws/x8a2r0l1/t3-1:latest
+
+	docker push public.ecr.aws/x8a2r0l1/t3-1:latest
+
+
+now we have pushed our image into aws ecr
+	public.ecr.aws/x8a2r0l1/t3-1:latest
+
+	docker run -p 8081:8080 public.ecr.aws/x8a2r0l1/t3-1:latest
+
+-------------------------------------------
+How to create ECR repository from command line
+	aws ecr create-repository --repository-name t3-2 --region ap-south-1
+
+Now we have learnt deploying spring boot application in ECR
+------------------------------------------------------------------------------
+ECS
+-----
+	What is ECS?
+		Elastic Container Service
+
+
+
+we deployed jar / war file
+	docker image was not used
+
+when we want to deploy docker image
+	ECR	is just a registry where we push the images and they are just lying there. NOT running
+but in the below cases, the app is running in aws 
+	Elastic Beanstalk		it is not running in cluster
+	ECS				usually, we run in 1 cluster/ container
+	EKS				we specify the nod/pod size of the cluster	
+
+go to aws ECS
+	create task definition
+		choose between "Fargate" or "EC2"
+		choose "Fargate"
+		enter task definition name
+		enter task role as "None"
+		enter task memory 1 Gb
+		enter cpu memory 0.5v CPU
+		create container
+			enter name
+			image:
+				docker.io/jagindia/reponame:tagname
+			memory limit: hard limit	1024
+			port mapping: 8080 and 80
+		click "Add"
+		click "create"
+
+	create cluster
+		type: Networking only
+		cluster name: jag1
+		click create
+	view cluster
+		task
+			"Run new task"
+				Launch type: fargate
+			choose task definition (already created)			
+			choose cluster vpc
+			choose subnet
+			security group:	
+				"Edit"
+				enter the security group name (any name)
+				In bound rules
+					choose all traffic and all tcp
+		click Run task button
+		in the cluster, check logs (refresh)
+		view logs in cloud watch
+
+	In status:	
+		Last status: RUNNING
+	Below that
+		Network:
+			public IP		(copy the ip address)
+	go to browser:
+		http://ipaddress:portnumber
+
+-------------------------
+
+enable public ip address
