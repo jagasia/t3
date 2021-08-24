@@ -1,0 +1,56 @@
+in aws elastic beanstalk, we created an application in an environment
+	as a deleting process, i can delete application or terminate environment
+
+	lot of applications were hanging there, while deleting, it was giving an error saying the AWSEBSRDS database is not found
+	i have deleted the database first. So i was not allowed to delete application.
+
+	visit cloudformation console and delete the applictions there. it worked
+
+
+Now, we have created a cluster in EKS	(Elastic Kubernetes Service) in AWS using the following command:
+	eksctl create cluster --name t3-cluster-1 --version 1.17 --region ap-south-1 --nodegroup-name linux-nodes --		node-type t2.micro --nodes 2
+
+Now, to deploy the spring boot application in eks, 
+	we need to create 2 yml files
+		deployment.yml
+		service.yml
+
+docker image of spring boot application created yesterday:-
+
+docker.io/library/ecr-demo-1:0.0.1-SNAPSHOT	
+docker.io/library/ecr-demo-1:0.0.1-SNAPSHOT
+	mvn spring-boot:build-image
+
+
+
+
+
+kubectl get pods
+	shows error: 	ImagePullBackOff
+
+add the following in deployment.yml file
+	imagePullPolicy: Never
+
+
+
+
+        
+        kubectl delete pods --all
+
+
+
+kubectl create deployment presto-coordinator \
+    --image=warsaw-data-meetup/presto-coordinator:beta0
+deployment.apps/presto-coordinator created
+
+
+kubectl create deployment my-app --image=jagindia/ecr-demo-1:latest
+
+
+kubectl describe pod <<podname>>
+
+
+a463f8419f1734c728c65671030ad5f4-1412084111.ap-south-1.elb.amazonaws.com
+
+
+
