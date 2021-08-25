@@ -1,0 +1,160 @@
+So far in AWS
+	Elastic Beanstalk
+	ECR
+	ECS
+	EKS
+		spring boot app 
+	CI/CD pipeline
+	MSK
+
+Spring Boot Security with JWT
+------------------------------
+	Spring security using OAuth2
+		authentication using 
+			Google
+			Facebook,
+			etc
+		authentication using our databaset 		ex: JPA/ jdbc template
+			
+	Why we need JWT? (JSON web token)
+
+		when we create REST Controllers, where every method is independent (no session management)
+		Angular front end, we need a session management or identity management across the various method calls		
+		We need a Token system.
+
+		When we create angular projects that accessed (spring) REST api,
+		we stored the identity of the user in localStorage.	What we stored is a plain text /json
+		User object usually has 	
+			username
+			password
+			firstName
+			lastName
+			role
+
+		it is not good idea to keep the user json in local or session storage
+			so we need to store a token	(which is usually not visible plain text)
+
+		JWT is encrypted text
+
+
+
+Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWciLCJleHAiOjE2Mjk5MDE4NTYsImlhdCI6MTYyOTg2NTg1Nn0.vboNdWQvJLO4z8wT8t4HdWaZ3iwaEhh2sfD1S_ZpZs4
+
+	we can decode the jwt using 
+		https://jwt.io/
+
+	We need a utility class in java that will 
+		generate "jwt" token based on username
+		also decode or obtain, username, role, etc from token
+		validate the tokent for expiry date		(1000*60*60*10)		approx 10 hours
+
+	we are giving the jwt token only if login is successful
+
+
+		
+1) ask the user to  access a POST mapping for "/authenticate"
+	this post accepts an object of entity			User	{"username":"jag","password":"jag"}
+		@RequestBody
+	returns a String		jwt string we return
+
+2) the client application that is going to access other "url"s must have the header in their requests
+	Authorization
+	Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWciLCJleHAiOjE2Mjk5MDE4NTYsImlhdCI6MTYyOTg2NTg1Nn0.vboNdWQvJLO4z8wT8t4HdWaZ3iwaEhh2sfD1S_ZpZs4
+
+
+	This "Bearer"+space+jwt
+		is a convention followed by most of the projects.
+
+	our java program		JwtUtil will split the string and understand "Bearer" is there or not.
+		then capture the remaining string using substring(7)
+
+
+
+1) AuthRequest				entity package
+	username
+	password
+
+		whenever client apps want to login, they are going to send this object as Request Body to POST 		mapping	("/authenticate)
+
+2) User			kind of UserDetails (spring security)
+	username
+	password
+	firstName
+	lastName
+	role
+	
+3) MyUserDetailsService	extends UserDetailsService			(spring security)
+		override the methods
+
+4) instead of @Configuration we use	@EnableWebSecurity  (this includes @Configuration								+@EnableSecurityConfiguration)
+	SecurityConfigurer extends WebSecurityConfigurerAdapter
+		override couple of "configure" methods		
+
+	passwordEncoder
+	
+	certain urls should be permitted without authentication
+		POST mapping of "Authenticate"
+
+
+5) JwtUtil
+	generate jwt token	-> will call create jwt token method and other methods to extract portion of jwt
+
+		we receive token from the client, from that token, we should be able to extract
+			username
+			role
+			expiry date
+			
+6) JwtFilter
+	Do you remember "Filters" in servlets?
+		doFilter(req, res, filterChain chain)
+			......
+	why?
+		every request should be intercepted to check the "Authorization" header
+
+	that means, our controller, will focus on business logic only.		
+
+
+
+
+
+1) first demo
+	have fixed username and password		in user details service
+		jag
+		jag
+
+		return new User("jag","jag",new ArrayList());
+
+
+dependencies:
+	spring web
+	spring security
+	jjwt
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+
+2) 
+
+
+
+
+
+
+
+
+
+
+first time, they login,
+	they hit		POST		"/authenticate"
+		this controller method will authenticate the user	either manually or using spring security configuration
+		once authentication is passed, then 
+		we call jwt util . generateToken(username)
+
+
+
+
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWphIiwiZXhwIjoxNjI5OTM5MjUwLCJpYXQiOjE2Mjk5MDMyNTB9.A55eP7ND82BIWVETrB68Ob06f5yUiyBVu6RMB90SHnw
+
+
