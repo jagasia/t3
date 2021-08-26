@@ -1,0 +1,53 @@
+Yesterday we created a spring boot rest api
+	that authenticate users and returned a JWT Token
+	then the users use that token in their "header" called as "Authorization" in all their other requests
+
+Angular + Spring JWT 
+	like in spring, we used jjwt dependency and created JwtUtil class that 
+		generated token
+		validate token
+		get username from the token
+		check for expiry
+
+	same way, in angular also, we have utility that can do such jwt related tasks
+
+		npm install jwt-decode
+
+
+	this should be installed inside an angular project		(try with -g for global)
+
+	this jwt_decode provide in 				jwt.io
+	same way in angular
+
+		return jwt_decode.default('eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaW5lc2giLCJleHAiOjE2Mjk5NDE1NTEsImlhdCI6MTYyOTkwNTU1MX0.8h2bSNjl-P7jq8AJr2-B-pED0NOROgx458eH_8pR4WA');
+
+
+		in order to use this jwt_decoe, we installed the same
+
+
+		http status code 200		OK
+
+		when we retrieve String from rest api	
+		so we can return objects from rest api
+
+
+from angular, (during login), we send an object of AuthRequest
+	AuthRequest
+		ng g class auth-request
+		ng g c login
+		ng g c home
+			from home, we call any other method using token
+
+		one utility that will automatically take the token from localStorage and assign it to header
+			"Authorization" header
+
+
+
+
+
+
+
+
+
+
+
