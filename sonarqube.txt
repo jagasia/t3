@@ -1,0 +1,53 @@
+download sonar qube from:
+	https://www.sonarqube.org/success-download-community-edition/
+
+unzip and extract to softwares folder
+	
+start sonar server:
+	in sonar folder, go to bin folder -> windows folder,
+	run the StartSonar.bat	script
+
+go to the folder that contains "pom.xml"
+	mvn clean verify sonar:sonar
+
+
+sonar qube required java 11
+
+<properties>
+       <java.version>1.8</java.version>
+       <maven.compiler.source>1.8</maven.compiler.source>
+       <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+
+
+
+<plugin>
+  <groupId>org.sonarsource.scanner.maven</groupId>
+  <artifactId>sonar-maven-plugin</artifactId>
+  <version>3.7.0.1746</version>
+</plugin>
+
+<plugin>
+	<groupId>org.jacoco</groupId>
+	<artifactId>jacoco-maven-plugin</artifactId>
+	<version>0.8.1</version>
+</plugin>
+
+
+
+
+clean org.jacoco:jacoco-maven-plugin:prepare-agent install
+
+
+https://www.javatips.net/blog/sonarqube-tutorial
+
+
+
+sonar:sonar -Dsonar.login=login
+
+1) Technical debt,  is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer.
+
+2) A code smell is any characteristic in the source code of a program that possibly indicates a deeper problem.
+
+3) Code coverage is a metric that can help you understand how much of your source is tested.
+

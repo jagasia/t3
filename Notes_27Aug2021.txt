@@ -1,0 +1,83 @@
+Kafka services and MSK (Managed Services for Kafka)
+-----------------------
+	what is kafka service?
+
+		Publish - Subscribe model
+
+	Publisher = Producer
+	Subscriber = Consumer
+
+See practical demo:
+-------------------
+	The producer and consumer are not online.
+	They are related via "Topic"
+		JMS	i) queue	ii) topic
+
+		
+
+ docker
+	use docker images
+		kafka
+		zookeeper
+		
+	how to run two docker images together?
+		docker-compose.yml
+
+0) create a "docker-compose.yml" file:
+-----------------------------------
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+
+1) docker compose up
+	in a location in cmd prompt where "docker-compose.yml" is present
+
+	this is going to run the docker images 
+
+2) lets create a producer
+	open a new cmd prompt
+C:\Users\rjaga>docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED             STATUS             PORTS                                                NAMES
+98a2ea29060f   wurstmeister/kafka       "start-kafka.sh"         About an hour ago   Up About an hour   0.0.0.0:9092->9092/tcp                               kafka_kafka_1
+2c9ea685d4f3   wurstmeister/zookeeper   "/bin/sh -c '/usr/sb…"   About an hour ago   Up About an hour   22/tcp, 2888/tcp, 3888/tcp, 0.0.0.0:2181->2181/tcp   kafka_zookeeper_1
+
+C:\Users\rjaga>docker exec -it 98a2ea29060f bash
+bash-5.1# kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test
+Created topic test.
+bash-5.1#
+
+
+bash-5.1# kafka-console-producer.sh --broker-list localhost:9092 --topic test
+>this is the message
+abcd
+>efgh
+>ijkl
+>emop
+>qrst
+
+
+
+3) lets create a receiver
+docker ps -a
+	note down the container id of kafka
+C:\Users\rjaga>docker exec -it 98a2ea29060f bash
+bash-5.1# kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test
+this is also a message
+abcd
+1234
+efgh
+ijkl
+mnop
+qrst
+
