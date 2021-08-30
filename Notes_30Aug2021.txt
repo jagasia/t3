@@ -1,0 +1,112 @@
+Last class we checked sonarqube and analysed the code quality of a java application
+	i installed java 11 and updated env variables
+	also updated spring tool suite for Jdk 11
+
+But, what actually works well	
+	install jdk 11 and set env var
+	start sonar qube server
+	But the project created in jdk 11 was not building successfully when we use sonar jacoco clean install & build
+		solution:
+			create project in jdk 1.8 	
+			and use <properties> for jdk 1.8
+			
+		this works
+
+-----------------------------------------------------------
+i will give demo if required.
+------------------------------------
+
+Today as I mentioned, 
+	lets deploy an angular app in AWS using Continuous Integration with GitHub
+
+	ie., we push the project into git and reflect it in Elastic Beanstalk
+
+1) in aws elastic beanstalk, lets create an application 
+	(earlier we have done this but for java application (spring boot application). The env was "java"
+
+	This time (instead of java), we will chose "node js" env
+
+	As usual, there will be a sample application that can be deployed. 
+2) when it takes time to create our application in aws, we can create a simple angular project
+
+3) in aws, sample app is up.
+	we are going to "Code pipeline" where, we can choose "GitHub" as source and do authorization
+	we can choose github repository and link it to the elastic beanstalk application
+
+4) we change the angular application in vs code
+	and push the changes into git hub
+	and expect the changes to reflect in the aws 
+
+
+
+
+
+t3-ci-1
+
+
+
+
+
+
+git init
+
+git add .
+
+git commit -m "first commit"
+
+git branch -M jag
+
+git remote add origin https://github.com/jagasia/t3-ci1.git
+
+git push -u origin jag
+
+
+
+
+
+in aws, navigate to the service "Code pipeline"
+create pipeline
+	name of the pipeline "t3-ci1"
+		all others are unchanged 
+		click next
+	source provider:
+		git hub
+		connect to github
+			connection name "jag-github"
+			choose the repositories	"All repositories"
+			then choose the repository and branch
+		skip the build stage
+	in deploy stage
+		choose elastic beanstalk
+			choose the app name and env name
+
+	in next step, create pipeline
+
+
+1) sonar qube
+	java project 1.8
+	jdk 11 is set to env variable
+		properties
+		plugin
+
+2) splunk
+
+
+We need to create an interview bank of Q & A
+
+
+Observable
+	rxjs
+	
+
+
+
+
+
+
+
+
+
+
+
+
