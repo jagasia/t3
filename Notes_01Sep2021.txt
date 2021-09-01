@@ -1,0 +1,214 @@
+Sonar Qube
+	https://www.sonarqube.org/success-download-community-edition/
+There is no installation for sonarqube.
+	download from above url and unzip to a known location
+
+	usually people may add the path where "startsonar" is present in "path" env variable.
+	so that in any cmd prompt, they can type	"startsonar"	that will start 
+	
+	or i go to the location and run that startsonar.bat file.		
+
+in my observation, the sonarqube that i have 
+	works when the env variables set to Java 11
+	and the project is done in 1.8
+
+Lets start sonarqube server
+
+
+mvn sonar:sonar -Dsonar.projectKey=t3-sonar-11 -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ea6a43ea40b45d4e5f6825c32fd4a3e58360238a
+
+download sonar qube from:
+	https://www.sonarqube.org/success-download-community-edition/
+
+unzip and extract to softwares folder
+	
+start sonar server:
+	in sonar folder, go to bin folder -> windows folder,
+	run the StartSonar.bat	script
+
+go to the folder that contains "pom.xml"
+	mvn clean verify sonar:sonar
+
+
+sonar qube required java 11
+
+<properties>
+       <java.version>1.8</java.version>
+       <maven.compiler.source>1.8</maven.compiler.source>
+       <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+
+
+
+<plugin>
+  <groupId>org.sonarsource.scanner.maven</groupId>
+  <artifactId>sonar-maven-plugin</artifactId>
+  <version>3.7.0.1746</version>
+</plugin>
+
+<plugin>
+	<groupId>org.jacoco</groupId>
+	<artifactId>jacoco-maven-plugin</artifactId>
+	<version>0.8.1</version>
+</plugin>
+
+
+
+
+clean org.jacoco:jacoco-maven-plugin:prepare-agent install
+
+
+https://www.javatips.net/blog/sonarqube-tutorial
+
+
+
+sonar:sonar -Dsonar.login=login
+
+
+
+1) Technical debt,  is a concept in software development that reflects 
+the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer.
+
+2) A code smell is any characteristic in the source code of a program that possibly indicates a deeper problem.
+
+3) Code coverage is a metric that can help you understand how much of your source is tested.
+
+
+
+
+
+
+
+mvn sonar:sonar -Dsonar.projectKey=t3-sonar-1 -Dsonar.host.url=http://localhost:9000  -Dsonar.login=f410e88996b36f170551f6ed2d67bf2a737f4707
+====================================================================
+
+
+Splunk
+------
+	Splunk is a tool to collect, analyze, forward machine data
+
+what is machine data?
+	Log entries
+
+Log entries mostly become dead information. or unnoticed information
+
+This is because of the complex nature of the format of the log information.
+
+Different projects may use different log entry formats.
+
+Splunk understands almost any type of log file
+
+Download:
+	https://www.splunk.com/en_us/download.html
+
+choose free splunk from top right and signup and download
+	https://www.splunk.com/en_us/download/splunk-enterprise.html?skip_request_page=1
+
+
+
+
+
+
+
+
+
+
+
+1) go to settings
+2) add data
+3) upload
+4) select source
+	select file
+5) next
+
+
+
+Stage 3 and Stage 4
+-----------------------
+Theory is not discussed
+including today we have 4 days:-
+--------------------------------
+
+Create an interview question bank
+-----------------------------------
+walk from first to last of stage 3 and 4 concepts.
+
+and discuss what are the possible interview questions
+	ex: 	what is circuit breaker, load balancer etc
+
+
+1) angular observable
+
+lambda
+	is an ad hoc implementation of a functional interface		JAVA
+	in typescript,
+		lambda is a quick implementation of anonymous function
+
+instead of creating a function and referring it on the method
+
+lambda is used for callback functions
+
+.subscribe(fn1);		// call this fn1 function when you are ready
+.subscribe(()=>{	10 lines	});		// same
+//any code here, this code is executed even before the lambda is executed.
+
+
+our associates will retrieve data from http client (rest api) and patch the data into the form
+the patch the data into the form outside lambda
+
+global variable
+	result:any;
+
+.subscribe((data)=>{
+	this.result=data;
+	
+});
+
+//outside lambda
+
+this.signupForm.patchValue(result);		///this will give error because, 	this.result=data; is delayed
+
+outside lambda is executed even before lambda is completed.
+
+
+
+
+
+
+
+checkLoginStatus()
+  {    
+    // alert('check login statyus')
+    const myObservable=new Observable(observer=>{
+      setTimeout(()=>{
+		//business logic here. 			status is the variable whose value we publish in next line
+          observer.next(status);
+      },100);
+    });
+    return myObservable;
+  }
+
+--------------------------------------------------------
+
+Kubernetes
+	we install 
+		"minikube"		for orchestration	locally
+		"kubectl"		for orchestration	locally
+		"eksctl"		this is for aws
+
+we can create PODS	nodes	etc
+
+cluster????????	
+	we need aws/azure/gcp 		real cloud
+
+
+we successfully created cluster using the following command:
+	eksctl create cluster --name test-cluster --version 1.17 --region ap-south-1 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
+
+
+
+
+
+
+
+
