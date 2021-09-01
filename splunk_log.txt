@@ -1,0 +1,449 @@
+01-Nov-2018 13:29:32.429 INFO [http-nio-13064-exec-6] async.AsyncStockServlet.<init> AsyncStockServlet created
+01-Nov-2018 13:30:31.245 INFO [Async2-Thread] async.Async2$1.run Putting AsyncThread to sleep
+01-Nov-2018 13:30:33.246 INFO [Async2-Thread] async.Async2$1.run Writing data.
+01-Nov-2018 13:30:35.626 INFO [Async1-Thread] async.Async1$1.run Putting AsyncThread to sleep
+01-Nov-2018 13:30:37.629 INFO [Async1-Thread] async.Async1$1.run Dispatching to /jsp/async/async1.jsp
+21-Oct-2018 04:43:50.188 INFO [Async2-Thread] async.Async2$1.run Putting AsyncThread to sleep
+21-Oct-2018 04:43:52.190 INFO [Async2-Thread] async.Async2$1.run Writing data.
+21-Oct-2018 04:43:56.957 INFO [Async0-Thread] async.Async0$1.run Putting AsyncThread to sleep
+21-Oct-2018 04:43:58.958 INFO [Async0-Thread] async.Async0$1.run Dispatching
+21-Oct-2018 04:43:58.960 INFO [http-nio-13064-exec-73] async.Async0.service Received dispatch, completing on the worker thread.
+21-Oct-2018 04:43:58.961 INFO [http-nio-13064-exec-73] async.Async0.service After complete called started:false
+21-Oct-2018 04:44:04.129 INFO [Async1-Thread] async.Async1$1.run Putting AsyncThread to sleep
+21-Oct-2018 04:44:06.130 INFO [Async1-Thread] async.Async1$1.run Dispatching to /jsp/async/async1.jsp
+21-Oct-2018 04:44:18.984 INFO [http-nio-13064-exec-67] async.AsyncStockServlet.<init> AsyncStockServlet created
+28-Oct-2018 16:47:15.416 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.9
+28-Oct-2018 16:47:15.449 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 5 2016 20:18:12 UTC
+28-Oct-2018 16:47:15.450 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.9.0
+28-Oct-2018 16:47:15.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+28-Oct-2018 16:47:15.453 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.10.0-862.14.4.el7.x86_64
+28-Oct-2018 16:47:15.454 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+28-Oct-2018 16:47:15.456 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/java/jdk1.8.0_131/jre
+28-Oct-2018 16:47:15.461 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+28-Oct-2018 16:47:15.461 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+28-Oct-2018 16:47:15.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/upskilli/apache-tomcat-8.5.9
+28-Oct-2018 16:47:15.467 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/upskilli/apache-tomcat-8.5.9
+28-Oct-2018 16:47:15.469 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/upskilli/apache-tomcat-8.5.9//conf/logging.properties
+28-Oct-2018 16:47:15.478 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Oct-2018 16:47:15.481 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx128000000
+28-Oct-2018 16:47:15.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.awt.headless=true
+28-Oct-2018 16:47:15.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+28-Oct-2018 16:47:15.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Oct-2018 16:47:15.491 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/upskilli/apache-tomcat-8.5.9/
+28-Oct-2018 16:47:15.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/upskilli/apache-tomcat-8.5.9/
+28-Oct-2018 16:47:15.492 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/upskilli/apache-tomcat-8.5.9//temp
+28-Oct-2018 16:47:15.494 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+28-Oct-2018 16:47:17.518 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-13064"]
+28-Oct-2018 16:47:17.862 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+28-Oct-2018 16:47:17.936 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-17010"]
+28-Oct-2018 16:47:17.976 SEVERE [main] org.apache.coyote.AbstractProtocol.init Failed to initialize end point associated with ProtocolHandler ["ajp-nio-17010"]
+ java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+
+28-Oct-2018 16:47:17.985 SEVERE [main] org.apache.catalina.core.StandardService.initInternal Failed to initialize connector [Connector[AJP/1.3-17010]]
+ org.apache.catalina.LifecycleException: Failed to initialize component [Connector[AJP/1.3-17010]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:970)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	... 12 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	... 13 more
+
+28-Oct-2018 16:47:17.988 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 7266 ms
+28-Oct-2018 16:47:18.428 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+28-Oct-2018 16:47:18.446 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.9
+28-Oct-2018 16:47:18.747 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+28-Oct-2018 16:47:22.866 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 4,119 ms
+28-Oct-2018 16:47:23.201 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war
+28-Oct-2018 16:47:23.439 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war has finished in 238 ms
+28-Oct-2018 16:47:23.441 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples
+28-Oct-2018 16:47:26.390 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples has finished in 2,949 ms
+28-Oct-2018 16:47:26.391 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs
+28-Oct-2018 16:47:26.696 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs has finished in 305 ms
+28-Oct-2018 16:47:26.697 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager
+28-Oct-2018 16:47:26.951 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager has finished in 254 ms
+28-Oct-2018 16:47:26.959 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager
+28-Oct-2018 16:47:27.173 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager has finished in 214 ms
+28-Oct-2018 16:47:27.176 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/WAR
+28-Oct-2018 16:47:27.292 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/WAR has finished in 116 ms
+28-Oct-2018 16:47:27.329 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-13064]
+28-Oct-2018 16:47:27.435 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 9446 ms
+20-Oct-2018 12:02:10.081 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.9
+20-Oct-2018 12:02:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 5 2016 20:18:12 UTC
+20-Oct-2018 12:02:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.9.0
+20-Oct-2018 12:02:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2018 12:02:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.10.0-862.14.4.el7.x86_64
+20-Oct-2018 12:02:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2018 12:02:10.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/java/jdk1.8.0_131/jre
+20-Oct-2018 12:02:10.096 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+20-Oct-2018 12:02:10.096 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+20-Oct-2018 12:02:10.096 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/upskilli/apache-tomcat-8.5.9
+20-Oct-2018 12:02:10.097 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/upskilli/apache-tomcat-8.5.9
+20-Oct-2018 12:02:10.098 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/upskilli/apache-tomcat-8.5.9//conf/logging.properties
+20-Oct-2018 12:02:10.098 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2018 12:02:10.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx128000000
+20-Oct-2018 12:02:10.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.awt.headless=true
+20-Oct-2018 12:02:10.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2018 12:02:10.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2018 12:02:10.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/upskilli/apache-tomcat-8.5.9/
+20-Oct-2018 12:02:10.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/upskilli/apache-tomcat-8.5.9/
+20-Oct-2018 12:02:10.102 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/upskilli/apache-tomcat-8.5.9//temp
+20-Oct-2018 12:02:10.103 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+20-Oct-2018 12:02:10.503 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-13064"]
+20-Oct-2018 12:02:10.547 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+20-Oct-2018 12:02:10.552 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-17010"]
+20-Oct-2018 12:02:10.554 SEVERE [main] org.apache.coyote.AbstractProtocol.init Failed to initialize end point associated with ProtocolHandler ["ajp-nio-17010"]
+ java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+
+20-Oct-2018 12:02:10.559 SEVERE [main] org.apache.catalina.core.StandardService.initInternal Failed to initialize connector [Connector[AJP/1.3-17010]]
+ org.apache.catalina.LifecycleException: Failed to initialize component [Connector[AJP/1.3-17010]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:970)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	... 12 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	... 13 more
+
+20-Oct-2018 12:02:10.561 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1686 ms
+20-Oct-2018 12:02:10.618 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+20-Oct-2018 12:02:10.619 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.9
+20-Oct-2018 12:02:10.638 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples
+20-Oct-2018 12:02:11.717 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples has finished in 1,077 ms
+20-Oct-2018 12:02:11.717 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs
+20-Oct-2018 12:02:11.736 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs has finished in 19 ms
+20-Oct-2018 12:02:11.737 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager
+20-Oct-2018 12:02:11.769 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager has finished in 32 ms
+20-Oct-2018 12:02:11.769 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT
+20-Oct-2018 12:02:11.786 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT has finished in 17 ms
+20-Oct-2018 12:02:11.811 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager
+20-Oct-2018 12:02:11.832 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager has finished in 46 ms
+20-Oct-2018 12:02:11.843 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-13064]
+20-Oct-2018 12:02:11.852 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1290 ms
+20-Oct-2018 12:07:03.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.9
+20-Oct-2018 12:07:03.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 5 2016 20:18:12 UTC
+20-Oct-2018 12:07:03.046 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.9.0
+20-Oct-2018 12:07:03.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2018 12:07:03.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.10.0-862.14.4.el7.x86_64
+20-Oct-2018 12:07:03.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2018 12:07:03.047 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/java/jdk1.8.0_131/jre
+20-Oct-2018 12:07:03.048 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+20-Oct-2018 12:07:03.048 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+20-Oct-2018 12:07:03.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/upskilli/apache-tomcat-8.5.9
+20-Oct-2018 12:07:03.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/upskilli/apache-tomcat-8.5.9
+20-Oct-2018 12:07:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/upskilli/apache-tomcat-8.5.9//conf/logging.properties
+20-Oct-2018 12:07:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2018 12:07:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx128000000
+20-Oct-2018 12:07:03.052 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.awt.headless=true
+20-Oct-2018 12:07:03.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2018 12:07:03.053 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2018 12:07:03.054 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/upskilli/apache-tomcat-8.5.9/
+20-Oct-2018 12:07:03.054 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/upskilli/apache-tomcat-8.5.9/
+20-Oct-2018 12:07:03.055 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/upskilli/apache-tomcat-8.5.9//temp
+20-Oct-2018 12:07:03.057 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+20-Oct-2018 12:07:03.528 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-13064"]
+20-Oct-2018 12:07:03.581 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+20-Oct-2018 12:07:03.585 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-17010"]
+20-Oct-2018 12:07:03.587 SEVERE [main] org.apache.coyote.AbstractProtocol.init Failed to initialize end point associated with ProtocolHandler ["ajp-nio-17010"]
+ java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+
+20-Oct-2018 12:07:03.589 SEVERE [main] org.apache.catalina.core.StandardService.initInternal Failed to initialize connector [Connector[AJP/1.3-17010]]
+ org.apache.catalina.LifecycleException: Failed to initialize component [Connector[AJP/1.3-17010]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:970)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	... 12 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	... 13 more
+
+20-Oct-2018 12:07:03.590 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1882 ms
+20-Oct-2018 12:07:03.661 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+20-Oct-2018 12:07:03.662 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.9
+20-Oct-2018 12:07:03.682 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples
+20-Oct-2018 12:07:04.839 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples has finished in 1,157 ms
+20-Oct-2018 12:07:04.840 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs
+20-Oct-2018 12:07:04.872 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs has finished in 32 ms
+20-Oct-2018 12:07:04.872 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager
+20-Oct-2018 12:07:04.902 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager has finished in 30 ms
+20-Oct-2018 12:07:04.903 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT
+20-Oct-2018 12:07:04.951 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT has finished in 49 ms
+20-Oct-2018 12:07:04.951 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager
+20-Oct-2018 12:07:05.025 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager has finished in 74 ms
+20-Oct-2018 12:07:05.033 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-13064]
+20-Oct-2018 12:07:05.047 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1457 ms
+20-Oct-2018 12:10:15.061 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war
+20-Oct-2018 12:10:15.188 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war has finished in 128 ms
+20-Oct-2018 12:11:05.695 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/.ROOT]
+20-Oct-2018 12:11:05.739 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war
+20-Oct-2018 12:11:05.962 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war has finished in 210 ms
+20-Oct-2018 12:11:05.962 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/WAR
+20-Oct-2018 12:11:06.002 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/WAR has finished in 40 ms
+20-Oct-2018 12:11:26.627 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+20-Oct-2018 12:11:26.628 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-13064"]
+20-Oct-2018 12:11:26.689 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-17010"]
+20-Oct-2018 12:11:26.689 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+20-Oct-2018 12:11:26.737 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-13064"]
+20-Oct-2018 12:11:26.739 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-13064"]
+20-Oct-2018 12:11:26.740 INFO [1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-17010"]
+20-Oct-2018 12:11:26.741 INFO [1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-17010"]
+20-Oct-2018 12:11:32.696 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.9
+20-Oct-2018 12:11:32.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 5 2016 20:18:12 UTC
+20-Oct-2018 12:11:32.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.9.0
+20-Oct-2018 12:11:32.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+20-Oct-2018 12:11:32.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.10.0-862.14.4.el7.x86_64
+20-Oct-2018 12:11:32.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+20-Oct-2018 12:11:32.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/java/jdk1.8.0_131/jre
+20-Oct-2018 12:11:32.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_131-b11
+20-Oct-2018 12:11:32.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+20-Oct-2018 12:11:32.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/upskilli/apache-tomcat-8.5.9
+20-Oct-2018 12:11:32.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/upskilli/apache-tomcat-8.5.9
+20-Oct-2018 12:11:32.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/upskilli/apache-tomcat-8.5.9//conf/logging.properties
+20-Oct-2018 12:11:32.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Oct-2018 12:11:32.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx128000000
+20-Oct-2018 12:11:32.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.awt.headless=true
+20-Oct-2018 12:11:32.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+20-Oct-2018 12:11:32.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+20-Oct-2018 12:11:32.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/upskilli/apache-tomcat-8.5.9/
+20-Oct-2018 12:11:32.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/upskilli/apache-tomcat-8.5.9/
+20-Oct-2018 12:11:32.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/upskilli/apache-tomcat-8.5.9//temp
+20-Oct-2018 12:11:32.706 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+20-Oct-2018 12:11:33.076 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-13064"]
+20-Oct-2018 12:11:33.103 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+20-Oct-2018 12:11:33.107 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-17010"]
+20-Oct-2018 12:11:33.112 SEVERE [main] org.apache.coyote.AbstractProtocol.init Failed to initialize end point associated with ProtocolHandler ["ajp-nio-17010"]
+ java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+
+20-Oct-2018 12:11:33.114 SEVERE [main] org.apache.catalina.core.StandardService.initInternal Failed to initialize connector [Connector[AJP/1.3-17010]]
+ org.apache.catalina.LifecycleException: Failed to initialize component [Connector[AJP/1.3-17010]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:549)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:875)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:606)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:311)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:494)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:970)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107)
+	... 12 more
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:941)
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:237)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:558)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:968)
+	... 13 more
+
+20-Oct-2018 12:11:33.116 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1104 ms
+20-Oct-2018 12:11:33.165 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+20-Oct-2018 12:11:33.165 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.9
+20-Oct-2018 12:11:33.201 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war
+20-Oct-2018 12:11:33.666 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/.ROOT.war has finished in 464 ms
+20-Oct-2018 12:11:33.667 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples
+20-Oct-2018 12:11:33.957 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/examples has finished in 291 ms
+20-Oct-2018 12:11:33.958 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs
+20-Oct-2018 12:11:34.019 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/docs has finished in 61 ms
+20-Oct-2018 12:11:34.019 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager
+20-Oct-2018 12:11:34.063 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/manager has finished in 44 ms
+20-Oct-2018 12:11:34.064 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT
+20-Oct-2018 12:11:34.082 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT has finished in 17 ms
+20-Oct-2018 12:11:34.082 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager
+20-Oct-2018 12:11:34.116 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/host-manager has finished in 34 ms
+20-Oct-2018 12:11:34.117 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/WAR
+20-Oct-2018 12:11:34.140 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/upskilli/apache-tomcat-8.5.9/webapps/WAR has finished in 24 ms
+20-Oct-2018 12:11:34.145 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-13064]
+20-Oct-2018 12:11:34.164 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1047 ms
+20-Oct-2018 16:42:53.016 INFO [http-nio-13064-exec-9] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 16:42:53.038 INFO [http-nio-13064-exec-9] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 16:42:53.171 INFO [http-nio-13064-exec-9] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 134 ms
+20-Oct-2018 16:47:17.050 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 16:47:17.077 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 16:47:17.195 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 115 ms
+20-Oct-2018 16:49:07.222 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 16:49:07.254 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 16:49:07.419 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 165 ms
+20-Oct-2018 16:58:57.499 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 16:58:57.534 INFO [localhost-startStop-4] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 16:58:57.613 INFO [localhost-startStop-4] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 79 ms
+20-Oct-2018 17:17:27.711 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 17:17:27.743 INFO [localhost-startStop-5] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 17:17:27.839 INFO [localhost-startStop-5] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 96 ms
+20-Oct-2018 17:18:37.865 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 17:18:37.891 INFO [localhost-startStop-6] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 17:18:38.005 INFO [localhost-startStop-6] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 114 ms
+20-Oct-2018 17:22:38.028 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 17:22:38.052 INFO [localhost-startStop-7] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 17:22:38.140 INFO [localhost-startStop-7] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 87 ms
+20-Oct-2018 17:26:28.170 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy Undeploying context []
+20-Oct-2018 17:26:28.183 INFO [localhost-startStop-8] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war
+20-Oct-2018 17:26:28.275 INFO [localhost-startStop-8] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /home/upskilli/apache-tomcat-8.5.9/webapps/ROOT.war has finished in 92 ms

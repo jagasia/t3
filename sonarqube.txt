@@ -45,9 +45,19 @@ https://www.javatips.net/blog/sonarqube-tutorial
 
 sonar:sonar -Dsonar.login=login
 
-1) Technical debt,  is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer.
+
+
+1) Technical debt,  is a concept in software development that reflects 
+the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer.
 
 2) A code smell is any characteristic in the source code of a program that possibly indicates a deeper problem.
 
 3) Code coverage is a metric that can help you understand how much of your source is tested.
 
+
+
+
+
+
+
+mvn sonar:sonar -Dsonar.projectKey=t3-sonar-1 -Dsonar.host.url=http://localhost:9000  -Dsonar.login=f410e88996b36f170551f6ed2d67bf2a737f4707

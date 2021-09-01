@@ -1,0 +1,8 @@
+1) download splunk from:
+	https://www.splunk.com/en_us/download.html
+2) choose "Free Splunk" from top right and signup and download
+	https://www.splunk.com/en_us/download/splunk-enterprise.html?skip_request_page=1
+
+3) execute the installer
+	create account (same or different) for administrator user
+
