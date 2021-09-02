@@ -1,0 +1,300 @@
+Git
+----
+	Git is a versioning and project sharing platform
+	when multiple users push the contents, we can trace the changes
+		added		-	green
+		removed		-	red color
+
+	Once git is installed in our PC, we are able to see that colors in our angular project in vs code
+
+	what is .gitignore
+		while pushing the contents to the remote repository, we do not want to include certain files/folder
+		for angular, 		node_modules,		dist	such folders are always ignored there
+
+	git clone		used on first time to take entire copy of the remote contents to local repo
+	git pull		incremental changes only pulled from remote to local repo
+
+	git push		incremental changes only pushed from local to remote repo
+
+	git merge
+
+	git switch
+	git checkout
+		these 2 are used to change the current branch
+
+	git init
+		in order to erase previously given commands, we can use git init. This will initialize first time, reinitialize next times.
+		it will create .git folder. By deleting .git folder, we can also remove initilization or commands
+
+	When you push contents to remote, you get error "Remote contains work that you do not have locally"
+
+	pull before push
+
+	You want to delete a file in remote repo.		(this was mostly required by project teams)
+
+	pull or clone everything to local repo.
+	delete the file in our computer.
+	push again.			what we deleted here, will be deleted there.
+
+we can do these on browser also in GitLab
+
+------------------------------------------------------------------------------
+
+Bootstrap			mobile first approach
+----------
+	grid model			12 column layout
+	typography			basic styling is there for most of the html elements once we apply bootstrap
+	FORM ELEMENT styles		
+	CONTAINER	styles
+	TABLE		styles
+	NAVBAR		styles
+	
+	what is scaffolding?			while building a tower/ construction work, they need some frame where 						people will build the application
+
+	Responsive designing 				fluid		like a liquid adapts to the space		
+		adapts to the browser sizes and resizing
+	
+
+	FirstName
+	........................
+
+
+	semantic	elements
+		success			green
+		warning			orange
+		danger			red
+		info			blue
+		primary			grey
+
+
+	alert-danger
+	btn-success
+	
+	JUMBOTRON		usually can be placed in header
+	COROUSEL		sliding images		we can add controls 	<	>	page number
+	ACCORDION		menu options that can expand or collapse	toggle collapse
+
+-----------------------------------------------------------
+Jquery
+------
+	is an application of javascript
+	javascript is allowed in jquery
+
+	binding an event to an event handler is made very simple
+
+	selector		as almost same as CSS
+			#
+			.
+			pseudo selectors
+			*
+
+	value		=val()
+	innerHTML	=html()
+	innerText	=text()
+
+	.css(key,value)
+	
+
+$(document).ready(function(){
+	$("#btn").click(function(){
+	
+	});	
+});	
+
+					
+focus
+blur
+toggle
+
+
+jquery-ui
+
+
+.js file only
+
+jquery using CDN
+local jquery also
+
+we can create a file jquery.js
+	and paste the entire content of Jquery CDN
+
+
+<script src="jquery.js">
+	//nothing is allowed to be typed here
+</script>
+
+<script>
+</script>
+
+
+----------------------------------------------------------------------
+Spring REST using Spring Boot:
+------------------------------
+	1) REST Principles
+		I would start from SOAP
+			sharing 1 url that represent entire web service that has lot of functionalities.
+		REST allows sharing micro level ie., URL for every method
+		
+		url must be generalized
+
+	base url is same
+
+	same url but different HTTP method
+		GET
+		PUT
+		POST
+		DELETE
+		PATCH			update only few of the properties of object
+
+
+
+		http://localhost:8080/addemployee
+		http://localhost:8080/modifyemployee
+		http://localhost:8080/deleteemployee
+
+			the above idea is poor with respect to REST principles
+
+Principles of Rest Services:
+	Uniform Interface:
+		In REST, everything is a resource. Resource may be a document, picture, video, module, class, method, etc. Anything that is available to service consumer. 
+		Resources are accessed using URI.
+		Each resource must have unique URI.
+		SAME URI but DIFFERENT HTTP methods
+
+	Statelessness:
+		no client state information is maintained at server
+		hence, scalable and reduced work load
+		
+	Layered System:
+		example, API in one server, Database in another server, authentication in another server	
+
+	Code on Demand:
+		different format based on demand. XML or JSON
+	
+
+How would you use PUT, DELETE mappings from a jsp file??????
+	<FORM METHOD=GET/POST
+
+	we use Feign client for PUT, DELETE
+
+
+@Consumes
+@Produces
+
+otherwise
+@RequestMapping(method=		value=url		consumes=		produces=		params=	)
+
+
+
+Request Mapping can be used to specify any http method
+
+@GetMapping
+	only url can be provided
+
+
+
+if you have url for the class, @RequestMapping only we should use
+
+
+we test the rest api using Post man
+
+Swagger
+	can provide documentation for REST API
+
+SOAP has documentation called WSDL		Web Services Description Language
+but usually REST api do not have documentation
+
+thats where swagger is used
+
+@ExceptionHandler
+	is used for exception handling
+	How will you handle exceptions in a separate class
+@ExceptionHandlerAdvice
+
+REST API practically
+	we can autowire the service in controller		
+		we can also autowire a repository in the controller		possible. but not convention
+
+Entity
+Repository			JPA repository is an interface that we extend
+Service
+Controller
+
+implementation of JPA repository is done by Spring IOC container when we autowire it in service
+
+
+Spring REST vs Spring Boot Rest
+
+in spring rest
+	we have dispatcher servlet		name is spring
+		web.xml
+	and spring-servlet.xml					something-servlet.xml
+		base package scan
+		
+in spring boot
+	we do not need to configure when we follow the convention
+
+spring boot is convention over configuration
+
+<constructor-arg>			all arg constructor
+<property>
+
+
+
+<bean>
+	<property>					then you must have a no-arg constructor and setter method
+</bean>
+
+
+ClassPathXMLApplicationContext
+new AnnotationConfigApplicationContext("applicationContext.xml");
+
+
+;
+
+	for read(id)
+
+@PathVariable
+@RequestParam
+@RequestBody
+@MultipartFile
+@Valid
+
+
+@RestController
+	@Controller + @ResponseBody
+
+
+in mvc projects, we use @Controller
+
+	@GetMapping("/")
+	public String home()
+	{
+		return "index";
+	}
+
+
+here, index is the name of view			JSP/HTML
+
+	@GetMapping("/")
+	@ResponseBody
+	public String home()
+	{
+		return "index";
+	}
+here, index is the value which is returned.			in browser, you will see "index"
+
+
+url
+driver
+username
+password
+
+thse are taken by DataSource
+
+<bean id="ds" class="..DataSource">
+	url
+	driverClassName
+	username
+	password
+</bean>
